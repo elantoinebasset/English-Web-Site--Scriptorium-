@@ -9,15 +9,6 @@
     text-align: center;
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    margin-left: 136px;
-}
-
-.card-body {
-
-}
 
 .title {
     display: flex;
@@ -141,29 +132,34 @@
     }
 
 
+
+
     /* From Uiverse.io by JohnnyCSilva */ 
 .card {
+    opacity: 0;  
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    margin-left: 136px;
     width: 195px;
     height: 285px;
     background: #313131;
-    border-radius: 20px;
-    ;
+    border-radius: 20px;;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: rgb(0, 0, 0);
+    position: relative;
     transition: 0.2s ease-in-out;
   }
-  
-  .img {
-    height: 30%;
-    position: absolute;
-    transition: 0.2s ease-in-out;
-    z-index: 1;
-  }
+
+  .Imge{
+    width: 120px;
+    margin-bottom: 80px;
+    transition: 0.3s ease-in-out;
+      }
   
   .textBox {
+    position: absolute;
     opacity: 0;
     display: flex;
     flex-direction: column;
@@ -180,43 +176,34 @@
   
   .textBox > .head {
     font-size: 20px;
+    color: rgb(255, 255, 255);
   }
   
   .textBox > .price {
     font-size: 17px;
+    color: white;
   }
   
   .textBox > span {
     font-size: 12px;
-    color: lightgrey;
+    color: rgb(255, 255, 255);
   }
   
   .card:hover > .textBox {
     opacity: 1;
   }
   
-  .card:hover > .img {
+  .card:hover > .Imge {
     height: 65%;
     filter: blur(7px);
     animation: anim 3s infinite;
   }
-  
-  @keyframes anim {
-    0% {
-      transform: translateY(0);
-    }
-  
-    50% {
-      transform: translateY(-20px);
-    }
-  
-    100% {
-      transform: translateY(0);
-    }
-  }
+
   
   .card:hover {
     transform: scale(1.04) rotate(-1deg);
   }
   
-  
+  .show-card {
+    opacity: 1;
+}
