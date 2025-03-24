@@ -4,22 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- Bootstrap CSS -->
+    
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="ShowCard.js">
+
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/Flip.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/Observer.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/Draggable.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/MotionPathPlugin.min.js"></script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/CustomEase.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/Flip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/Observer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/Draggable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/MotionPathPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/CustomEase.min.js"></script>
 </head>
 <body>
     <header>
@@ -57,64 +53,53 @@
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
               </form>
             </div>
-          </nav>
+        </nav>
     </header>
 
     <main>
         <div class="container_top">
-            <h1 class="title">
-                Welcome to the Scriptorium
-            </h1>
+            <h1 class="title">Welcome to the Scriptorium</h1>
         </div>
 
-        <!--Carte-->
         <div>
-
-          <div>
-
-
-<div class="card">
-  <svg class="img" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100%" height="100%" version="1.1" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 784.37 1277.39" xmlns:xlink="http://www.w3.org/1999/xlink">
- <g id="Layer_x0020_1">
-  <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-  <g id="_1421394342400">
-   <g>
-    <img class="card" src="https://img.freepik.com/vecteurs-libre/illustration-plate-journee-internationale-langue-maternelle_23-2149219243.jpg" alt="">
-   </g>
-  </g>
- </g>
-</svg>
-  <div class="textBox">
-    <p class="text head">Ethereum</p>
-    <span>Cryptocurrency</span>
-    <p class="text price">1.654,34€</p>
-  </div>
-</div>
-
-          <div>
-            <button class="ButtonMap">NorthAmerica</button>
-
+            <button class="ButtonMap">North America</button>
             <div class="card" id="myCard">
-              <img class="Imge" src="https://img.freepik.com/vecteurs-libre/illustration-plate-journee-internationale-langue-maternelle_23-2149219243.jpg" alt="">
+              <img class="Imge" src="https://img.freepik.com/vecteurs-libre/illustration-plate-journee-internationale-langue-maternelle_23-2149219243.jpg" alt="Illustration">
               <div class="textBox">
-                <p class="text head">Ethereum</p>
-                <span>Cryptocurrency</span>
-                <p class="text price">1.654,34€</p>
+                  <p class="text head">Ethereum</p>
+                  <span>Cryptocurrency</span>
+                  <p class="text price">1.654,34€</p>
               </div>
             </div>
             
-          </div>
-
-
-          <button class="ButtonMapEurope">Europe</button>
-          <button class="ButtonMapAsia">Asia</button>
-          <button class="ButtonMapAfrica">Africa</button>
-          <img src="MapContinents.png" class="Map" alt="">
         </div>
 
-          <!-- From Uiverse.io by JohnnyCSilva --> 
+        <button class="ButtonMapEurope">Europe</button>
+        <button class="ButtonMapAsia">Asia</button>
+        <button class="ButtonMapAfrica">Africa</button>
+
+        <img src="MapContinents.png" class="Map" alt="Map">
+    </main>
 
 
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+    <script src="ShowCard.js"></script>
+    <script src="TPPages.js"></script>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            gsap.to(".title", { duration: 1, opacity: 1, y: 0 });
+            console.log("GSAP fonctionne  !");
+        });
+    </script>
 </body>
 </html>
-
