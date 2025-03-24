@@ -30,7 +30,7 @@
 /*Buttons_________________________________________________________________*/
 .ButtonMap {
     position: absolute;
-    margin-top: 10%;
+    margin-top: 25%;
     margin-left: 15%;
     padding: 15px 25px;
     border-radius: 10px;
@@ -141,9 +141,8 @@
     margin-left: 136px;
     width: 195px;
     height: 285px;
-    background: #313131;
-    border-radius: 20px;;
-    display: flex;
+    background: #3e3d3d;
+    border-radius: 20px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -151,6 +150,7 @@
     position: relative;
     transition: 0.2s ease-in-out;
   }
+
 
   .Imge{
     width: 120px;
@@ -194,14 +194,13 @@
   }
   
   .card:hover > .Imge {
-    height: 65%;
     filter: blur(7px);
     animation: anim 3s infinite;
   }
 
   
   .card:hover {
-    transform: scale(1.04) rotate(-1deg);
+    transform: scale(1.0) rotate(-1deg);
   }
   
   .show-card {
