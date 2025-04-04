@@ -30,8 +30,8 @@
 /*Buttons_________________________________________________________________*/
 .ButtonMap {
     position: absolute;
-    margin-top: 25%;
-    margin-left: 15%;
+    top: 40%;
+    left: 15%;
     padding: 15px 25px;
     border-radius: 10px;
     border: 0;
@@ -43,6 +43,7 @@
     color: hsl(0, 0%, 100%);
     cursor: pointer;
     }
+    
 .ButtonMap:hover {
     box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
     }
@@ -136,9 +137,11 @@
 
     /* From Uiverse.io by JohnnyCSilva */ 
 .card {
+  position: absolute;
+  left: 14%;
+  top: 10%;
     opacity: 0;  
     transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
-    margin-left: 136px;
     width: 195px;
     height: 285px;
     background: #3e3d3d;
@@ -147,8 +150,9 @@
     align-items: center;
     justify-content: center;
     color: rgb(0, 0, 0);
-    position: relative;
     transition: 0.2s ease-in-out;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
   }
 
 
