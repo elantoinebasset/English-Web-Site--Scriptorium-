@@ -135,7 +135,6 @@
 
 
 
-    /* From Uiverse.io by JohnnyCSilva */ 
 .card {
   position: absolute;
   left: 14%;
@@ -152,7 +151,6 @@
     color: rgb(0, 0, 0);
     transition: 0.2s ease-in-out;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    cursor: pointer;
   }
 
 
@@ -199,7 +197,6 @@
   
   .card:hover > .Imge {
     filter: blur(7px);
-    animation: anim 3s infinite;
   }
 
   
