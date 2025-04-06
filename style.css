@@ -134,11 +134,10 @@
 
 
 
-
+/*Cards_________________________________________________________________*/
 .card {
-  position: absolute;
-  left: 14%;
-  top: 10%;
+  pointer-events: none;
+    position: absolute;
     opacity: 0;  
     transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
     width: 195px;
@@ -206,4 +205,30 @@
   
   .show-card {
     opacity: 1;
+    pointer-events: auto;
+}
+
+.hide-card {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.card-northamerica{
+  left: 14.2%;
+  top: 10%;
+}
+
+.card-europe{
+  left: 47.5%;
+  top: 6%;
+}
+
+.card-Asia{
+  left: 64%;
+  top: 10%;
+}
+
+.card-Africa{
+  left: 45.4%;
+  top: 29.7%;
 }
