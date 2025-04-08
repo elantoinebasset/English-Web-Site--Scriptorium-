@@ -1,51 +1,125 @@
-document.querySelector(".ButtonMap").addEventListener("click", function() {
-    document.getElementById("myCard").classList.toggle("show-card");
 
+const cardsState = {
+    america: false,
+    europe: false,
+    asia: false,
+    africa: false
+};
 
-    setTimeout(function() {
-        document.getElementById("myCard2").classList.toggle("show-card");
-    }, 100);
+// America Button
+document.querySelector(".ButtonMap").addEventListener("click", function () {
+    if (cardsState.america) {
 
+        hideAllCards();
+        cardsState.america = false;
+    } else {
+
+        hideAllCards();
+        
+        document.getElementById("myCard").classList.add("show-card");
+        document.getElementById("myCard").classList.remove("hide-card");
+
+        setTimeout(function () {
+            document.getElementById("myCard2").classList.add("show-card");
+            document.getElementById("myCard2").classList.remove("hide-card");
+        }, 100);
+        
+
+        resetCardStates();
+        cardsState.america = true;
+    }
 });
 
+// Europe Button
+document.querySelector(".ButtonMapEurope").addEventListener("click", function () {
+    if (cardsState.europe) {
 
-document.querySelector(".ButtonMapEurope").addEventListener("click", function() {
-    document.getElementById("myEuroCard").classList.toggle("show-card");
+        hideAllCards();
+        cardsState.europe = false;
+    } else {
 
-    setTimeout(function() {
-        document.getElementById("myEuroCard2").classList.toggle("show-card");
-    }, 100);
+        hideAllCards();
+        
+        document.getElementById("myEuroCard").classList.add("show-card");
+        document.getElementById("myEuroCard").classList.remove("hide-card");
 
-    setTimeout(function() {
-        document.getElementById("myEuroCard3").classList.toggle("show-card");
-    }, 100);
+        setTimeout(function () {
+            document.getElementById("myEuroCard2").classList.add("show-card");
+            document.getElementById("myEuroCard2").classList.remove("hide-card");
+        }, 200);
+
+        setTimeout(function () {
+            document.getElementById("myEuroCard3").classList.add("show-card");
+            document.getElementById("myEuroCard3").classList.remove("hide-card");
+        }, 300);
+
+        setTimeout(function () {
+            document.getElementById("myEuroCard4").classList.add("show-card");
+            document.getElementById("myEuroCard4").classList.remove("hide-card");
+        }, 400);
+        
+
+        resetCardStates();
+        cardsState.europe = true;
+    }
 });
 
-document.querySelector(".ButtonMapAsia").addEventListener("click", function() {
-    document.getElementById("myAsiaCard").classList.toggle("show-card");
+// Asia Button
+document.querySelector(".ButtonMapAsia").addEventListener("click", function () {
+    if (cardsState.asia) {
+
+        hideAllCards();
+        cardsState.asia = false;
+    } else {
+
+        hideAllCards();
+        
+        document.getElementById("myAsiaCard").classList.add("show-card");
+        document.getElementById("myAsiaCard").classList.remove("hide-card");
+        
+
+        resetCardStates();
+        cardsState.asia = true;
+    }
 });
 
-document.querySelector(".ButtonMapAfrica").addEventListener("click", function() {
-    document.getElementById("myAfricaCard").classList.toggle("show-card");
+// Africa Button
+document.querySelector(".ButtonMapAfrica").addEventListener("click", function () {
+    if (cardsState.africa) {
+
+        hideAllCards();
+        cardsState.africa = false;
+    } else {
+
+        hideAllCards();
+        
+        document.getElementById("myAfricaCard").classList.add("show-card");
+        document.getElementById("myAfricaCard").classList.remove("hide-card");
+        
+
+        resetCardStates();
+        cardsState.africa = true;
+    }
 });
 
+const allCardIds = [
+    "myCard", "myCard2",
+    "myEuroCard", "myEuroCard2", "myEuroCard3", "myEuroCard4",
+    "myAsiaCard", "myAfricaCard"
+];
 
-
-
-function showOnlyCard(visibleCardId) {
-    Object.keys(cards).forEach(cardId => {
-        const card = document.getElementById(cardId);
-        if (cardId === visibleCardId) {
-            card.classList.add("show-card");
-            card.classList.remove("hide-card");
-        } else {
-            card.classList.remove("show-card");
-            card.classList.add("hide-card");
-        }
+function hideAllCards() {
+    allCardIds.forEach(id => {
+        const remove = document.getElementById(id);
+        remove.classList.remove("show-card");
+        remove.classList.add("hide-card");
     });
 }
-Object.entries(cards).forEach(([cardId, buttonClass]) => {
-    document.querySelector(`.${buttonClass}`).addEventListener("click", () => {
-        showOnlyCard(cardId);
-    });
-});
+
+
+function resetCardStates() {
+    cardsState.america = false;
+    cardsState.europe = false;
+    cardsState.asia = false;
+    cardsState.africa = false;
+}

@@ -225,18 +225,23 @@
 
 /*europe*/
 .card-europe{
-  left: 47.5%;
-  top: 6%;
+  left: 40.5%;
+  top: 18%;
 }
 
 .card-europe2{
-  left: 50%;
-  top: 6%;
+  left: 57%;
+  top: 18%;
 }
 
 .card-europe3{
-  left: 50%;
-  top: 16%;
+  left: 57%;
+  top: 44.5%;
+}
+
+.card-europe4{
+  left: 40.5%;
+  top: 44.5%;
 }
 
 /*Asia*/
