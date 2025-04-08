@@ -1,9 +1,24 @@
 document.querySelector(".ButtonMap").addEventListener("click", function() {
     document.getElementById("myCard").classList.toggle("show-card");
+
+
+    setTimeout(function() {
+        document.getElementById("myCard2").classList.toggle("show-card");
+    }, 100);
+
 });
+
 
 document.querySelector(".ButtonMapEurope").addEventListener("click", function() {
     document.getElementById("myEuroCard").classList.toggle("show-card");
+
+    setTimeout(function() {
+        document.getElementById("myEuroCard2").classList.toggle("show-card");
+    }, 100);
+
+    setTimeout(function() {
+        document.getElementById("myEuroCard3").classList.toggle("show-card");
+    }, 100);
 });
 
 document.querySelector(".ButtonMapAsia").addEventListener("click", function() {
@@ -15,12 +30,7 @@ document.querySelector(".ButtonMapAfrica").addEventListener("click", function() 
 });
 
 
-const cards = {
-    myCard: "ButtonMap",
-    myEuroCard: "ButtonMapEurope",
-    myAsiaCard: "ButtonMapAsia",
-    myAfricaCard: "ButtonMapAfrica"
-};
+
 
 function showOnlyCard(visibleCardId) {
     Object.keys(cards).forEach(cardId => {
@@ -34,8 +44,6 @@ function showOnlyCard(visibleCardId) {
         }
     });
 }
-
-
 Object.entries(cards).forEach(([cardId, buttonClass]) => {
     document.querySelector(`.${buttonClass}`).addEventListener("click", () => {
         showOnlyCard(cardId);

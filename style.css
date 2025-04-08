@@ -140,8 +140,8 @@
     position: absolute;
     opacity: 0;  
     transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
-    width: 195px;
-    height: 285px;
+    width: 155px;
+    height: 155px;
     background: #3e3d3d;
     border-radius: 20px;
     flex-direction: column;
@@ -155,7 +155,9 @@
 
   .Imge{
     width: 120px;
-    margin-bottom: 80px;
+    min-height: 120px;
+    margin: 20px;
+    border-radius: 20px;
     transition: 0.3s ease-in-out;
       }
   
@@ -176,14 +178,11 @@
   }
   
   .textBox > .head {
+    margin-top: 10px;
     font-size: 20px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
   }
   
-  .textBox > .price {
-    font-size: 17px;
-    color: white;
-  }
   
   .textBox > span {
     font-size: 12px;
@@ -212,22 +211,41 @@
     opacity: 0;
     pointer-events: none;
 }
-
+/* North America */
 .card-northamerica{
-  left: 14.2%;
-  top: 10%;
+  left: 15.5%;
+  top: 20%;
 }
 
+.card-northamerica2{
+  left: 15.5%;
+  top: 50%;
+}
+
+
+/*europe*/
 .card-europe{
   left: 47.5%;
   top: 6%;
 }
 
+.card-europe2{
+  left: 50%;
+  top: 6%;
+}
+
+.card-europe3{
+  left: 50%;
+  top: 16%;
+}
+
+/*Asia*/
 .card-Asia{
   left: 64%;
   top: 10%;
 }
 
+/*Africa*/
 .card-Africa{
   left: 45.4%;
   top: 29.7%;
