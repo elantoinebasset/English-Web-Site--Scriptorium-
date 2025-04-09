@@ -203,7 +203,7 @@ document.querySelector("#myAsiaCard").addEventListener("click", function() {
     }, 200);  
 
     setTimeout(() => {
-        window.location.href = "/Pages/China.html";
+        window.location.href = "/Pages/Chinese.html";
     }, 3500);
 });
 
@@ -230,7 +230,7 @@ document.querySelector("#myAsiaCard2").addEventListener("click", function() {
     }, 200);  
 
     setTimeout(() => {
-        window.location.href = "/Pages/China.html";
+        window.location.href = "/Pages/Georgian.html";
     }, 3500);
 });
 
@@ -257,7 +257,7 @@ document.querySelector("#myAsiaCard3").addEventListener("click", function() {
     }, 200);  
 
     setTimeout(() => {
-        window.location.href = "/Pages/China.html";
+        window.location.href = "/Pages/Tibetan.html";
     }, 3500);
 });
 
@@ -284,7 +284,7 @@ document.querySelector("#myAsiaCard4").addEventListener("click", function() {
     }, 200);  
 
     setTimeout(() => {
-        window.location.href = "/Pages/China.html";
+        window.location.href = "/Pages/Japanese.html";
     }, 3500);
 });
 
@@ -311,7 +311,7 @@ document.querySelector("#myAsiaCard5").addEventListener("click", function() {
     }, 200);  
 
     setTimeout(() => {
-        window.location.href = "/Pages/China.html";
+        window.location.href = "/Pages/Mongolian.html";
     }, 3500);
 });
 
@@ -338,7 +338,7 @@ document.querySelector("#myAsiaCard6").addEventListener("click", function() {
     }, 200);  
 
     setTimeout(() => {
-        window.location.href = "/Pages/China.html";
+        window.location.href ="/Pages/Korean.html";
     }, 3500);
 });
 
