@@ -1,6 +1,71 @@
-.center-items {
+body {
+    font-family: 'Noto Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    background-color: #e74c3c;
+    color: white;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    font-family: 'Noto Serif', serif;
+}
+
+.section {
+    padding: 2rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+.chinese-text {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1.5rem;
+}
+
+.translation-box {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+}
+
+.img-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.img-fluid {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.useful-links a {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #e74c3c;
+    text-decoration: none;
+}
+
+.useful-links a:hover {
+    text-decoration: underline;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    background-color: #e74c3c;
+    color: rgb(42, 42, 42);
+    font-weight: bold;
 }
