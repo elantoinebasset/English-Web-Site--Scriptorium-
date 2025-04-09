@@ -246,12 +246,52 @@
 
 /*Asia*/
 .card-Asia{
-  left: 64%;
-  top: 10%;
+  left: 70%;
+  top: 18%;
+}
+
+.card-Asia2{
+  left: 74.5%;
+  top: 35%;
+}
+
+.card-Asia3{
+  left: 70%;
+  top: 52%;
+}
+
+.card-Asia4{
+  left: 60%;
+  top: 52%;
+}
+
+.card-Asia5{
+  left: 56%;
+  top: 35%;
+}
+
+.card-Asia6{
+  left: 60%;
+  top: 18%;
 }
 
 /*Africa*/
 .card-Africa{
-  left: 45.4%;
-  top: 29.7%;
+  left: 39%;
+  top: 45%;
+}
+
+.card-Africa2{
+  left: 54%;
+  top: 45%;
+}
+
+.card-Africa3{
+  left: 54%;
+  top: 70%;
+}
+
+.card-Africa4{
+  left: 39%;
+  top: 70%;
 }
