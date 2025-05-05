@@ -1,307 +1,456 @@
+/* Base styles */
 .container {
-    display: flex;
-    background-color: #000000;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin: 10px;
-    padding: 20px;
-    max-width: 99%;
-    text-align: center;
+  display: flex;
+  background-color: #000000;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  padding: 20px;
+  max-width: 99%;
+  text-align: center;
 }
 
-
 .title {
-    display: flex;
-    justify-content: center;
-    padding: 40px;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
 }
 
 .container-carousel {
-    display: flex;
-    justify-content: center;
-    margin: 40px;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
 }
 
 .Map {
-    width: 80%;
-    margin-left: 10%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: block;
+  height: auto;
+  position: relative;
 }
-
 
 .Imge_logo {
   width: 50px;
-  left: 0.5%;
-  top: 10%;
   position: absolute;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  left: 60px;
+  top: 10px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-/*Buttons_________________________________________________________________*/
+/* Buttons */
+.map-button, .ButtonMap, .ButtonMapEurope, .ButtonMapAsia, .ButtonMapAfrica {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 0;
+  background-color: rgb(255, 56, 86);
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  position: absolute;
+  z-index: 10;
+}
+
+.map-button:hover, .ButtonMap:hover, .ButtonMapEurope:hover, .ButtonMapAsia:hover, .ButtonMapAfrica:hover {
+  box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+}
+
+.map-button:active, .ButtonMap:active, .ButtonMapEurope:active, .ButtonMapAsia:active, .ButtonMapAfrica:active {
+  background-color: rgb(255, 56, 86);
+  box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+  transform: translateY(5px);
+  transition: 200ms;
+}
+
 .ButtonMap {
-    position: absolute;
-    top: 40%;
-    left: 15%;
-    padding: 15px 25px;
-    border-radius: 10px;
-    border: 0;
-    background-color: rgb(255, 56, 86);
-    letter-spacing: 1.5px;
-    font-size: 15px;
-    transition: all 0.3s ease;
-    box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
-    color: hsl(0, 0%, 100%);
-    cursor: pointer;
-    }
-    
-.ButtonMap:hover {
-    box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
-    }
-.ButtonMap:active {
-    background-color: rgb(255, 56, 86);
-    box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
-    transform: translateY(5px);
-    transition: 200ms;
+  top: 25%;
+  left: 5.5%;
 }
-
 
 .ButtonMapEurope {
-        position: absolute;
-        top: 36%;
-        margin-left: 50%;
-        padding: 15px 25px;
-        border-radius: 10px;
-        border: 0;
-        background-color: rgb(255, 56, 86);
-        letter-spacing: 1.5px;
-        font-size: 15px;
-        transition: all 0.3s ease;
-        box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
-        color: hsl(0, 0%, 100%);
-        cursor: pointer;
-        }
-    .ButtonMapEurope:hover {
-        box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
-        }
-    .ButtonMapEurope:active {
-        background-color: rgb(255, 56, 86);
-        box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
-        transform: translateY(5px);
-        transition: 200ms;
-    }
+  top: 17%;
+  left: 50%;
+}
 
+.ButtonMapAsia {
+  top: 20%;
+  left: 70%;
+}
 
-    .ButtonMapAsia {
-        position: absolute;
-        margin-top: 9.5%;
-        margin-left: 67%;
-        padding: 15px 25px;
-        border-radius: 10px;
-        border: 0;
-        background-color: rgb(255, 56, 86);
-        letter-spacing: 1.5px;
-        font-size: 15px;
-        transition: all 0.3s ease;
-        box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
-        color: hsl(0, 0%, 100%);
-        cursor: pointer;
-        }
-    .ButtonMapAsia:hover {
-        box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
-        }
-    .ButtonMapAsia:active {
-        background-color: rgb(255, 56, 86);
-        box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
-        transform: translateY(5px);
-        transition: 200ms;
-    }
+.ButtonMapAfrica {
+  top: 45%;
+  left: 48%;
+}
 
-
-    .ButtonMapAfrica {
-        position: absolute;
-        margin-top: 20%;
-        margin-left: 48%;
-        padding: 15px 25px;
-        border-radius: 10px;
-        border: 0;
-        background-color: rgb(255, 56, 86);
-        letter-spacing: 1.5px;
-        font-size: 15px;
-        transition: all 0.3s ease;
-        box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
-        color: hsl(0, 0%, 100%);
-        cursor: pointer;
-        }
-    .ButtonMapAfrica:hover {
-        box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
-        }
-    .ButtonMapAfrica:active {
-        background-color: rgb(255, 56, 86);
-        box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
-        transform: translateY(5px);
-        transition: 200ms;
-    }
-
-
-
-/*Cards_________________________________________________________________*/
+/* Cards */
 .card {
   pointer-events: none;
-    position: absolute;
-    opacity: 0;  
-    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
-    width: 155px;
-    height: 155px;
-    background: #3e3d3d;
-    border-radius: 20px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: rgb(0, 0, 0);
-    transition: 0.2s ease-in-out;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  }
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  width: 155px;
+  height: 155px;
+  background: #3e3d3d;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  transition: 0.2s ease-in-out;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  z-index: 5;
+}
 
+.Imge {
+  width: 120px;
+  min-height: 120px;
+  margin: 20px;
+  border-radius: 20px;
+  transition: 0.3s ease-in-out;
+  object-fit: cover;
+}
 
-  .Imge{
-    width: 120px;
-    min-height: 120px;
-    margin: 20px;
-    border-radius: 20px;
-    transition: 0.3s ease-in-out;
-      }
-  
-  .textBox {
-    position: absolute;
-    opacity: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    transition: 0.2s ease-in-out;
-    z-index: 2;
-  }
-  
-  .textBox > .text {
-    font-weight: bold;
-  }
-  
-  .textBox > .head {
-    margin-top: 10px;
-    font-size: 20px;
-    color: rgb(0, 0, 0);
-  }
-  
-  
-  .textBox > span {
-    font-size: 12px;
-    color: rgb(255, 255, 255);
-  }
-  
-  .card:hover > .textBox {
-    opacity: 1;
-  }
-  
-  .card:hover > .Imge {
-    filter: blur(7px);
-  }
+.textBox {
+  position: absolute;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  transition: 0.2s ease-in-out;
+  z-index: 2;
+}
 
-  
-  .card:hover {
-    transform: scale(1.0) rotate(-1deg);
-  }
-  
-  .show-card {
-    opacity: 1;
-    pointer-events: auto;
+.textBox > .text {
+  font-weight: bold;
+}
+
+.textBox > .head {
+  margin-top: 10px;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+}
+
+.textBox > span {
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+}
+
+.card:hover > .textBox {
+  opacity: 1;
+}
+
+.card:hover > .Imge {
+  filter: blur(7px);
+}
+
+.card:hover {
+  transform: scale(1.0) rotate(-1deg);
+}
+
+.show-card {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .hide-card {
-    opacity: 0;
-    pointer-events: none;
+  opacity: 0;
+  pointer-events: none;
 }
+
+/* Map positioning - these will be adjusted in media queries */
 /* North America */
-.card-northamerica{
+.card-northamerica {
   left: 15.5%;
   top: 20%;
 }
 
-.card-northamerica2{
+.card-northamerica2 {
   left: 15.5%;
   top: 50%;
 }
 
-
-/*europe*/
-.card-europe{
+/* Europe */
+.card-europe {
   left: 40.5%;
   top: 18%;
 }
 
-.card-europe2{
+.card-europe2 {
   left: 57%;
   top: 18%;
 }
 
-.card-europe3{
+.card-europe3 {
   left: 57%;
   top: 44.5%;
 }
 
-.card-europe4{
+.card-europe4 {
   left: 40.5%;
   top: 44.5%;
 }
 
-/*Asia*/
-.card-Asia{
+/* Asia */
+.card-Asia {
   left: 70%;
   top: 18%;
 }
 
-.card-Asia2{
+.card-Asia2 {
   left: 74.5%;
   top: 35%;
 }
 
-.card-Asia3{
+.card-Asia3 {
   left: 70%;
   top: 52%;
 }
 
-.card-Asia4{
+.card-Asia4 {
   left: 60%;
   top: 52%;
 }
 
-.card-Asia5{
+.card-Asia5 {
   left: 56%;
   top: 35%;
 }
 
-.card-Asia6{
+.card-Asia6 {
   left: 60%;
   top: 18%;
 }
 
-/*Africa*/
-.card-Africa{
+/* Africa */
+.card-Africa {
   left: 39%;
   top: 45%;
 }
 
-.card-Africa2{
+.card-Africa2 {
   left: 54%;
   top: 45%;
 }
 
-.card-Africa3{
+.card-Africa3 {
   left: 54%;
   top: 70%;
 }
 
-.card-Africa4{
+.card-Africa4 {
   left: 39%;
   top: 70%;
+}
+
+
+.map-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1199.98px) {
+  .ButtonMap {
+    top: 23%;
+    left: 6.5%;
+    height: 40px;
+    font-size: 13px;
+  }
+  
+  .ButtonMapEurope {
+    top: 16%;
+    left: 50%;
+    height: 40px;
+    font-size: 13px;
+  }
+
+  .ButtonMapAsia {
+    top: 20%;
+    left: 70%;
+    height: 40px;
+    font-size: 13px;
+  }
+
+  .ButtonMapAfrica {
+    top: 45%;
+    left: 48%;
+    height: 40px;
+    font-size: 13px;
+  }
+
+
+  .card-northamerica {
+      left:5.6%;
+      top: -2%;
+      
+  }
+  
+  .card-northamerica2 {
+      left: 5.6%;
+      top: 32%;
+  }
+
+
+}
+
+
+@media (max-width: 991.98px) {
+  .map-button {
+      padding: 8px 15px;
+      font-size: 14px;
+      
+  }
+  
+  .card {
+      width: 130px;
+      height: 130px;
+  }
+  
+  .Imge {
+      width: 100px;
+      min-height: 100px;
+      margin: 15px;
+  }
+  
+  .ButtonMapEurope {
+      left: 45%;
+  }
+  
+  .ButtonMapAsia {
+      left: 65%;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .title {
+      padding: 15px;
+      font-size: 1.5rem;
+  }
+  
+  .map-button {
+      padding: 6px 12px;
+      font-size: 12px;
+  }
+  
+  .Imge_logo {
+      width: 40px;
+      left: 50px;
+  }
+  
+  /* Make the map container handle relative positioning */
+  .map-container {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+  }
+  
+  /* Reset all absolute positioning */
+  .card {
+      position: static;
+      display: none;
+      width: 120px;
+      height: 120px;
+      margin: 10px;
+  }
+  
+  /* Show only cards when activated by JS */
+  .show-card {
+      display: flex;
+      position: absolute;
+      top: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 20px;
+  }
+  
+  /* Position buttons in better spots for mobile */
+  .ButtonMap {
+      top: 30%;
+      left: 5%;
+  }
+  
+  .ButtonMapEurope {
+      top: 30%;
+      left: 35%;
+  }
+  
+  .ButtonMapAsia {
+      top: 30%;
+      left: 65%;
+  }
+  
+  .ButtonMapAfrica {
+      top: 60%;
+      left: 35%;
+  }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .title {
+      font-size: 1.2rem;
+  }
+  
+  .map-button {
+      padding: 5px 10px;
+      font-size: 10px;
+  }
+  
+  .Imge_logo {
+      width: 30px;
+      left: 40px;
+  }
+  
+  .map-container {
+      height: 300px;
+  }
+  
+  /* Stack the buttons vertically for very small screens */
+  .ButtonMap {
+      top: 10%;
+      left: 5%;
+  }
+  
+  .ButtonMapEurope {
+      top: 25%;
+      left: 5%;
+  }
+  
+  .ButtonMapAsia {
+      top: 40%;
+      left: 5%;
+  }
+  
+  .ButtonMapAfrica {
+      top: 55%;
+      left: 5%;
+  }
+  
+  /* Make cards smaller on very small screens */
+  .card {
+      width: 100px;
+      height: 100px;
+  }
+  
+  .Imge {
+      width: 80px;
+      min-height: 80px;
+      margin: 10px;
+  }
+  
+  .textBox > .head {
+      font-size: 16px;
+  }
 }

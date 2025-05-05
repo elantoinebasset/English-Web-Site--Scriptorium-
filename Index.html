@@ -3,20 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Scriptorium - Writing Systems of the World</title>
 
   <!-- CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
   <link rel="stylesheet" href="style.css" />
-
-
-
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">
-              ........<img class="Imge_logo" src="Scriptorium_logo.png" alt="">
+              <img class="Imge_logo" src="Scriptorium_logo.png" alt="Scriptorium Logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -25,18 +22,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="/Index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="/Index.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Links
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="https://www.duolingo.com">Duolingo</a>
-                    <a class="dropdown-item" href="https://unesdoc.unesco.org/ark:/48223/pf0000260736">writing peace (Unesco)</a>
+                    <a class="dropdown-item" href="https://unesdoc.unesco.org/ark:/48223/pf0000260736">Writing Peace (UNESCO)</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="https://www.youtube.com/watch?v=BBJa32lCaaY">Something else here, yeah i don't know</a>
+                    <a class="dropdown-item" href="https://www.youtube.com/watch?v=BBJa32lCaaY">Learn more about writing systems</a>
                   </div>
+                </li>
               </ul>
               <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -47,6 +45,7 @@
     </header>
 
     <main>
+      <!-- GSAP Scripts -->
       <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/Flip.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
@@ -54,159 +53,211 @@
       <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/Draggable.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/MotionPathPlugin.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/CustomEase.min.js"></script>
-        <div class="container_top">
-            <h1 class="title">Welcome to the Scriptorium</h1>
-        </div>
-
-        <!-- ButtonNorthAmérica -->
-            <button class="ButtonMap">North America</button>
-      <div class="card card-northamerica" id="myCard">
-              <img class="Imge" src="https://www.cherokeelessons.com/lessons/Syllabary-Dictation/The-Syllabary/syllabary_chart.jpg" alt="Illustration">
-              <div class="textBox">
-                  <p class="text head">Cherokee</p>
-              </div>
-      </div>
-
-      <div class="card card-northamerica2" id="myCard2">
-        <img class="Imge" src="https://i.pinimg.com/474x/5e/4a/51/5e4a51e2b97cc6ca9758c83b5bc31524.jpg" alt="Illustration">
-        <div class="textBox">
-            <p class="text head">Inuktitut</p>
-        </div>
-</div>
-
-
-                <!-- ButtonEurope -->
-        <button class="ButtonMapEurope">Europe</button>
-    <div class="card card-europe" id="myEuroCard">
-          <img class="Imge" src="https://m.media-amazon.com/images/I/71gwxjbBsGL._UF894,1000_QL80_.jpg" alt="Illustration">
-          <div class="textBox">
-              <p class="text head">Greek</p>
-          </div>
-    </div>
-
-    <div class="card card-europe2" id="myEuroCard2">
-      <img class="Imge" src="https://challengingeuropeucl.wordpress.com/wp-content/uploads/2019/06/image-1-1.png" alt="Illustration">
-      <div class="textBox">
-          <p class="text head">Cyrillic</p>
-      </div>
-</div>
-
-<div class="card card-europe3" id="myEuroCard3">
-  <img class="Imge" src="https://pictures.abebooks.com/inventory/md/md31827629220.jpg" alt="Illustration">
-  <div class="textBox">
-      <p class="text head">Roman</p>
-  </div>
-</div>
-
-
-<div class="card card-europe4" id="myEuroCard4">
-  <img class="Imge" src="https://jewishmuseum.org.uk/wp-content/uploads/2017/10/hebrew_alphabet.png" alt="Illustration">
-  <div class="textBox">
-      <p class="text head">Hebrew</p>
-  </div>
-</div>
-
-
-                <!-- ButtonAsia -->
-        <button class="ButtonMapAsia">Asia</button>
-    <div class="card card-Asia" id="myAsiaCard">
-          <img class="Imge" src="https://edge.mondly.com/blog/wp-content/uploads/2020/06/chinese-characters-600x402.jpg" alt="Illustration">
-          <div class="textBox">
-              <p class="text head">Chinese</p>
-          </div>
-    </div>
-
-    <div class="card card-Asia2" id="myAsiaCard2">
-      <img class="Imge" src="https://ih1.redbubble.net/image.5446109049.3193/fposter,small,wall_texture,square_product,600x600.jpg" alt="Illustration">
-      <div class="textBox">
-          <p class="text head">Georgian</p>
-      </div>
-</div>
-
-<div class="card card-Asia3" id="myAsiaCard3">
-  <img class="Imge" src="https://i.pinimg.com/564x/e2/cd/5d/e2cd5d66cf8a7396125752cfc6434610.jpg" alt="Illustration">
-  <div class="textBox">
-      <p class="text head">Tibetan</p>
-  </div>
-</div>
-
-<div class="card card-Asia4" id="myAsiaCard4">
-  <img class="Imge" src="https://mochidemy.com/kana/_next/image?url=%2Fkana%2F_next%2Fstatic%2Fmedia%2Fhiragana-chart-japanese-alphabet.f1932a8c.webp&w=1200&q=75" alt="Illustration">
-  <div class="textBox">
-      <p class="text head">Japanese</p>
-  </div>
-</div>
-
-<div class="card card-Asia5" id="myAsiaCard5">
-  <img class="Imge" src="https://www.mongolianlanguage.mn/wp-content/uploads/2020/08/Mongolian-Alphabet-Cyrillic-min-1024x622.png" alt="Illustration">
-  <div class="textBox">
-      <p class="text head">Mongolian</p>
-  </div>
-</div>
-
-<div class="card card-Asia6" id="myAsiaCard6">
-  <img class="Imge" src="https://images.squarespace-cdn.com/content/v1/5e42298fc800880b0e021f04/1586931818362-PZN3GAEWROUSO825CX7S/Basic+Korean+-+leniontheroad.com" alt="Illustration">
-  <div class="textBox">
-      <p class="text head">Korean</p>
-  </div>
-</div>
-
       
-                <!-- ButtonAfrica -->
-        <button class="ButtonMapAfrica">Africa</button>
-    <div class="card card-Africa" id="myAfricaCard">
-          <img class="Imge" src="https://equranekareem.com/_next/image?url=https%3A%2F%2Fimages.prismic.io%2Fequranekareem%2FZp-PgR5LeNNTxa7b_LearnArabicAlphabetChart-01.jpg%3Fauto%3Dformat%2Ccompress&w=3840&q=75" alt="Illustration">
-          <div class="textBox">
-              <p class="text head">Arabic</p>
-          </div>
-    </div>
-
-    <div class="card card-Africa2" id="myAfricaCard2">
-      <img class="Imge" src="https://qph.cf2.quoracdn.net/main-qimg-955787f56f641489a37a89bd5c606e79" alt="Illustration">
-      <div class="textBox">
-          <p class="text head">Ethiopian</p>
+      <div class="container_top">
+          <h1 class="title">Welcome to the Scriptorium</h1>
       </div>
-</div>
 
-<div class="card card-Africa3" id="myAfricaCard3">
-  <img class="Imge" src="https://afrilangues.com/blog/wp-content/uploads/2019/02/bamum1-1024x694-1024x694.jpg" alt="Illustration">
-  <div class="textBox">
-      <p class="text head">Bamum</p>
-  </div>
-</div>
+      <div class="map-container">
+        <!-- Map Image -->
+        <img src="MapContinents.png" class="Map" alt="Map of Continents">
+        
+        <!-- Continent Buttons -->
+        <button class="ButtonMap">North America</button>
+        <button class="ButtonMapEurope">Europe</button>
+        <button class="ButtonMapAsia">Asia</button>  
+        <button class="ButtonMapAfrica">Africa</button>
 
-<div class="card card-Africa4" id="myAfricaCard4">
-  <img class="Imge" src="https://www.omniglot.com/images/langsamples/smp_mandombe.gif" alt="Illustration">
-  <div class="textBox">
-      <p class="text head">Mandombe </p>
-  </div>
-</div>
+        <!-- North America Cards -->
+        <div class="card card-northamerica" id="myCard">
+            <img class="Imge" src="https://www.cherokeelessons.com/lessons/Syllabary-Dictation/The-Syllabary/syllabary_chart.jpg" alt="Cherokee Syllabary">
+            <div class="textBox">
+                <p class="text head">Cherokee</p>
+            </div>
+        </div>
 
-        <img src="MapContinents.png" class="Map" alt="Map">
+        <div class="card card-northamerica2" id="myCard2">
+            <img class="Imge" src="https://i.pinimg.com/474x/5e/4a/51/5e4a51e2b97cc6ca9758c83b5bc31524.jpg" alt="Inuktitut Script">
+            <div class="textBox">
+                <p class="text head">Inuktitut</p>
+            </div>
+        </div>
+
+        <!-- Europe Cards -->
+        <div class="card card-europe" id="myEuroCard">
+            <img class="Imge" src="https://m.media-amazon.com/images/I/71gwxjbBsGL._UF894,1000_QL80_.jpg" alt="Greek Alphabet">
+            <div class="textBox">
+                <p class="text head">Greek</p>
+            </div>
+        </div>
+
+        <div class="card card-europe2" id="myEuroCard2">
+            <img class="Imge" src="https://challengingeuropeucl.wordpress.com/wp-content/uploads/2019/06/image-1-1.png" alt="Cyrillic Alphabet">
+            <div class="textBox">
+                <p class="text head">Cyrillic</p>
+            </div>
+        </div>
+
+        <div class="card card-europe3" id="myEuroCard3">
+            <img class="Imge" src="https://pictures.abebooks.com/inventory/md/md31827629220.jpg" alt="Roman Alphabet">
+            <div class="textBox">
+                <p class="text head">Roman</p>
+            </div>
+        </div>
+
+        <div class="card card-europe4" id="myEuroCard4">
+            <img class="Imge" src="https://jewishmuseum.org.uk/wp-content/uploads/2017/10/hebrew_alphabet.png" alt="Hebrew Alphabet">
+            <div class="textBox">
+                <p class="text head">Hebrew</p>
+            </div>
+        </div>
+
+        <!-- Asia Cards -->
+        <div class="card card-Asia" id="myAsiaCard">
+            <img class="Imge" src="https://edge.mondly.com/blog/wp-content/uploads/2020/06/chinese-characters-600x402.jpg" alt="Chinese Characters">
+            <div class="textBox">
+                <p class="text head">Chinese</p>
+            </div>
+        </div>
+
+        <div class="card card-Asia2" id="myAsiaCard2">
+            <img class="Imge" src="https://ih1.redbubble.net/image.5446109049.3193/fposter,small,wall_texture,square_product,600x600.jpg" alt="Georgian Script">
+            <div class="textBox">
+                <p class="text head">Georgian</p>
+            </div>
+        </div>
+
+        <div class="card card-Asia3" id="myAsiaCard3">
+            <img class="Imge" src="https://i.pinimg.com/564x/e2/cd/5d/e2cd5d66cf8a7396125752cfc6434610.jpg" alt="Tibetan Script">
+            <div class="textBox">
+                <p class="text head">Tibetan</p>
+            </div>
+        </div>
+
+        <div class="card card-Asia4" id="myAsiaCard4">
+            <img class="Imge" src="https://mochidemy.com/kana/_next/image?url=%2Fkana%2F_next%2Fstatic%2Fmedia%2Fhiragana-chart-japanese-alphabet.f1932a8c.webp&w=1200&q=75" alt="Japanese Hiragana">
+            <div class="textBox">
+                <p class="text head">Japanese</p>
+            </div>
+        </div>
+
+        <div class="card card-Asia5" id="myAsiaCard5">
+            <img class="Imge" src="https://www.mongolianlanguage.mn/wp-content/uploads/2020/08/Mongolian-Alphabet-Cyrillic-min-1024x622.png" alt="Mongolian Script">
+            <div class="textBox">
+                <p class="text head">Mongolian</p>
+            </div>
+        </div>
+
+        <div class="card card-Asia6" id="myAsiaCard6">
+            <img class="Imge" src="https://images.squarespace-cdn.com/content/v1/5e42298fc800880b0e021f04/1586931818362-PZN3GAEWROUSO825CX7S/Basic+Korean+-+leniontheroad.com" alt="Korean Hangul">
+            <div class="textBox">
+                <p class="text head">Korean</p>
+            </div>
+        </div>
+
+        <!-- Africa Cards -->
+        <div class="card card-Africa" id="myAfricaCard">
+            <img class="Imge" src="https://equranekareem.com/_next/image?url=https%3A%2F%2Fimages.prismic.io%2Fequranekareem%2FZp-PgR5LeNNTxa7b_LearnArabicAlphabetChart-01.jpg%3Fauto%3Dformat%2Ccompress&w=3840&q=75" alt="Arabic Script">
+            <div class="textBox">
+                <p class="text head">Arabic</p>
+            </div>
+        </div>
+
+        <div class="card card-Africa2" id="myAfricaCard2">
+            <img class="Imge" src="https://qph.cf2.quoracdn.net/main-qimg-955787f56f641489a37a89bd5c606e79" alt="Ethiopian Script">
+            <div class="textBox">
+                <p class="text head">Ethiopian</p>
+            </div>
+        </div>
+
+        <div class="card card-Africa3" id="myAfricaCard3">
+            <img class="Imge" src="https://afrilangues.com/blog/wp-content/uploads/2019/02/bamum1-1024x694-1024x694.jpg" alt="Bamum Script">
+            <div class="textBox">
+                <p class="text head">Bamum</p>
+            </div>
+        </div>
+
+        <div class="card card-Africa4" id="myAfricaCard4">
+            <img class="Imge" src="https://www.omniglot.com/images/langsamples/smp_mandombe.gif" alt="Mandombe Script">
+            <div class="textBox">
+                <p class="text head">Mandombe</p>
+            </div>
+        </div>
+      </div>
     </main>
 
-
-
-
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-
-
-
-
+    
+    <!-- Custom JavaScript -->
     <script src="ShowCard.js"></script>
     <script src="TPPages.js"></script>
 
-
-
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            gsap.to(".title", { duration: 1, opacity: 1, y: 0 });
-            console.log("GSAP fonctionne  !");
+            // GSAP animation for title
+            gsap.from(".title", { 
+                duration: 1, 
+                opacity: 0, 
+                y: -50 
+            });
+            
+            // Make sure buttons work on mobile
+            const setupMobileCards = function() {
+                if (window.innerWidth < 768) {
+                    // Handle mobile display of cards
+                    const hideAllCards = () => {
+                        document.querySelectorAll('.card').forEach(card => {
+                            card.classList.remove('show-card');
+                            card.classList.add('hide-card');
+                        });
+                    };
+                    
+                    // North America
+                    document.querySelector('.ButtonMap').addEventListener('click', function() {
+                        hideAllCards();
+                        document.querySelectorAll('.card-northamerica, .card-northamerica2').forEach(card => {
+                            card.classList.add('show-card');
+                            card.classList.remove('hide-card');
+                        });
+                    });
+                    
+                    // Europe
+                    document.querySelector('.ButtonMapEurope').addEventListener('click', function() {
+                        hideAllCards();
+                        document.querySelectorAll('.card-europe, .card-europe2, .card-europe3, .card-europe4').forEach(card => {
+                            card.classList.add('show-card');
+                            card.classList.remove('hide-card');
+                        });
+                    });
+                    
+                    // Asia
+                    document.querySelector('.ButtonMapAsia').addEventListener('click', function() {
+                        hideAllCards();
+                        document.querySelectorAll('.card-Asia, .card-Asia2, .card-Asia3, .card-Asia4, .card-Asia5, .card-Asia6').forEach(card => {
+                            card.classList.add('show-card');
+                            card.classList.remove('hide-card');
+                        });
+                    });
+                    
+                    // Africa
+                    document.querySelector('.ButtonMapAfrica').addEventListener('click', function() {
+                        hideAllCards();
+                        document.querySelectorAll('.card-Africa, .card-Africa2, .card-Africa3, .card-Africa4').forEach(card => {
+                            card.classList.add('show-card');
+                            card.classList.remove('hide-card');
+                        });
+                    });
+                }
+            };
+            
+            // Run on page load
+            setupMobileCards();
+            
+            // Run when window is resized
+            window.addEventListener('resize', setupMobileCards);
         });
     </script>
-
-
-
 </body>
 </html>
