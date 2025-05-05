@@ -27,6 +27,16 @@
     margin-left: 10%;
 }
 
+
+.Imge_logo {
+  width: 50px;
+  left: 0.5%;
+  top: 10%;
+  position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
 /*Buttons_________________________________________________________________*/
 .ButtonMap {
     position: absolute;
@@ -57,7 +67,7 @@
 
 .ButtonMapEurope {
         position: absolute;
-        margin-top: 8%;
+        top: 36%;
         margin-left: 50%;
         padding: 15px 25px;
         border-radius: 10px;
