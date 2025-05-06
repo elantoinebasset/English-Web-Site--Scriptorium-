@@ -11,36 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="writing-system.css">
     
-    
-    <style>
-        .snake-segment {
-            width: 20px;
-            height: 20px;
-            background-color: lime;
-            position: absolute;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            transition: all 0.1s ease-out;
-        }
-        #toggleButton {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 10000;
-            padding: 10px 15px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
 
-        #toggleButton:hover {
-            background-color: #0056b3;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -65,7 +36,7 @@
                     <a class="dropdown-item" href="https://www.duolingo.com">Duolingo</a>
                     <a class="dropdown-item" href="https://unesdoc.unesco.org/ark:/48223/pf0000260736">writing peace (Unesco)</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="https://www.youtube.com/watch?v=BBJa32lCaaY">Something else here, yeah i don't know</a>
+                    <a class="dropdown-item" href="https://noe.blanqu.art/">Something else here, yeah i don't know</a>
                   </div>
                 </li>
               </ul>
@@ -75,8 +46,17 @@
               </form>
             </div>
         </nav>
+        <div class="backgroundColorRed"></div>
     </header>
-<main>
+
+    <div class="ImageSides1"><img src="/Pages/Images pour pages/China/China Lamp.png" alt=""></div>
+    <div class="ImageSides2"><img src="/Pages/Images pour pages/China/China Lamp (2).png" alt=""></div>
+    <div class="ImageSides3"><img src="/Pages/Images pour pages/China/China Lamp (3).png" alt=""></div>
+    <div class="ImageSides4"><img src="/Pages/Images pour pages/China/China Lamp (4).png" alt=""></div>
+    <div class="ImageSides5"><img src="/Pages/Images pour pages/China/China Lamp (5).png" alt=""></div>
+    <div class="ImageSides6"><img src="/Pages/Images pour pages/China/China Lamp (6).png" alt=""></div>
+
+<main class="main-contentChinese">
     <div class="container">
 
         <section class="section">
@@ -94,6 +74,7 @@
                     </div>
                 </div>
             </div>
+            <button class="btn btn-primary mt-4" id="toggleButton">Masquer le dragon</button>
         </section>
 
 
@@ -155,6 +136,7 @@
                     </div>
                 </div>
             </div>
+                                    <div class="backgroundColorRed"></div>
         </section>
 
 
@@ -222,6 +204,7 @@
         </section>
     </div>
 </main>
+<div class="backgroundColorRed"></div>
 
     <footer>
 
@@ -253,6 +236,24 @@
             background-size: cover;
             background-position: center;
             border-radius: 50%;
+        }
+
+        #toggleButton {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10000;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        #toggleButton:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -392,8 +393,6 @@
                 
 
                 animationFrameId = requestAnimationFrame(animateSnake);
-                
-                console.log("Animation du dragon démarrée");
                 
 
                 return { segments, positions, animationFrameId };
