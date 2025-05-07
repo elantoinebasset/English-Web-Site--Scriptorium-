@@ -7,6 +7,11 @@ body {
     background: radial-gradient(circle, #ff8b39, #ff2a00);
 }
 
+.text-muted-small {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
 header {
     color: white;
 }
