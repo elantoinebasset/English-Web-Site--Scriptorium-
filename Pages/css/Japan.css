@@ -1,0 +1,10 @@
+.petal {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    pointer-events: none;
+    user-select: none;
+    transition: transform 0.2s ease-out;
+    z-index: 1000;
+}
+
