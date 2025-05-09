@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="writing-system.css">
     <link rel="stylesheet" href="css/cherokee.css">
+    <link rel="stylesheet" href="css/cherokee-decorative.css">
 </head>
 <body>
     <header>
@@ -49,30 +50,70 @@
             </div>
           </nav>
     </header>
-<main class="cherokee_background">
+<main class="cherokee-background">
     <div class="container">
 
-        <section class="section">
+        <!-- Title section with Cherokee-inspired header -->
+        <section class="cherokee-header">
             <div class="row align-items-center">
                 <div class="col-md-12">
-                    <div class="chinese-text text-center">
+                    <div class="text-center">
                         <h2>Cherokee Writing System</h2>
-                        <p>ᎪᎯᎢᏗ ᏙᎯᏱ</p>
-                        <p class="text-muted small">(Gohiyidi Dohiyi – “Writing Peace”)</p>                        
+                        <p class="cherokee-syllabary">ᎪᎯᎢᏗ ᏙᎯᏱ</p>
+                        <p class="text-muted small">(Gohiyidi Dohiyi – "Writing Peace")</p>                        
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <div class="img-container">
+                    <div class="cherokee-image-frame">
                         <img src="images/cherokee-script_images/cheroke image.png" alt="Cherokee Syllabary" class="img-fluid" width="350">
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Seven-pointed star representing the seven Cherokee clans -->
+        <div class="cherokee-star-container">
+            <div class="cherokee-star">
+                <!-- SVG star will be displayed here -->
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Seven-pointed star representing the Cherokee seven clans -->
+                  <defs>
+                    <linearGradient id="starGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#9B2226" />
+                      <stop offset="100%" stop-color="#774936" />
+                    </linearGradient>
+                  </defs>
+                  
+                  <!-- Main star shape -->
+                  <path d="M100,10 L124,76 L194,76 L138,118 L156,188 L100,150 L44,188 L62,118 L6,76 L76,76 Z" 
+                        fill="none" 
+                        stroke="url(#starGradient)" 
+                        stroke-width="4"/>
+                  
+                  <!-- Inner pattern -->
+                  <circle cx="100" cy="100" r="30" fill="none" stroke="#774936" stroke-width="2" />
+                  
+                  <!-- Symbol dots representing the seven clans -->
+                  <circle cx="100" cy="10" r="4" fill="#9B2226" />
+                  <circle cx="124" cy="76" r="4" fill="#9B2226" />
+                  <circle cx="194" cy="76" r="4" fill="#9B2226" />
+                  <circle cx="138" cy="118" r="4" fill="#9B2226" />
+                  <circle cx="156" cy="188" r="4" fill="#9B2226" />
+                  <circle cx="100" cy="150" r="4" fill="#9B2226" />
+                  <circle cx="44" cy="188" r="4" fill="#9B2226" />
+                  <circle cx="62" cy="118" r="4" fill="#9B2226" />
+                  <circle cx="6" cy="76" r="4" fill="#9B2226" />
+                  <circle cx="76" cy="76" r="4" fill="#9B2226" />
+                  
+                  <!-- Center circle -->
+                  <circle cx="100" cy="100" r="15" fill="#E9C46A" stroke="#774936" stroke-width="1" />
+                </svg>
+            </div>
+        </div>
 
-        <section class="section">
-            <h2 class="mb-4">How to Recognize It?</h2>
-            <div class="card">
+        <section class="cherokee-section">
+            <h2 class="cherokee-heading" data-cherokee="ᎠᏍᏓᏩᏛᏍᏗ">How to Recognize It?</h2>
+            <div class="cherokee-card">
                 <div class="card-body">
                     <h5 class="card-title">Distinctive Features of Cherokee Syllabary</h5>
                     <ul class="list-group list-group-flush">
@@ -99,14 +140,17 @@
             </div>
         </section>
 
-
-        <section class="section">
-            <h2 class="mb-4">Writing Basics</h2>
+        <section class="cherokee-section">
+            <h2 class="cherokee-heading" data-cherokee="ᎠᏟᎶᏍᏗ">Writing Basics</h2>
             <div class="row">
                 <div class="col-md-6">
                     <p>The Cherokee syllabary is a writing system where each character represents a syllable in the Cherokee language. Unlike alphabets where characters represent individual sounds, Cherokee characters combine consonants and vowels into single units.</p>
                     
-                    <div class="card mb-4">
+                    <div class="sequoyah-quote">
+                        The Cherokee syllabary was designed to be simple and practical, allowing anyone in the tribe to learn to read and write in a short period of time.
+                    </div>
+                    
+                    <div class="cherokee-card mb-4">
                         <div class="card-header">
                             Basic Principles
                         </div>
@@ -123,61 +167,57 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="img-container">
+                    <div class="cherokee-image-frame">
                         <img src="images/cherokee-script_images/cherokee_alphabet.jpg" alt="Cherokee Syllabary Chart" class="img-fluid" width="400">
                     </div>
                 </div>
             </div>
         </section>
 
-
-        <section class="section">
-            <h2 class="mb-4">History</h2>
+        <section class="cherokee-section">
+            <h2 class="cherokee-heading">History</h2>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="timeline">
-                        <div class="card mb-3">
-                            <div class="card-header">Origins and Evolution</div>
-                            <div class="card-body">
-                                <p>The Cherokee syllabary was invented by Sequoyah (also known as George Guess), a Cherokee silversmith in the early 19th century. This remarkable achievement made him the only known person in history to create a writing system for a language single-handedly without already knowing how to read or write.</p>
-                                
-                                <h5 class="mt-4">Timeline of Development</h5>
-                                <ul>
-                                    <li><strong>1809:</strong> Sequoyah begins work on creating a writing system for Cherokee</li>
-                                    <li><strong>1821:</strong> After 12 years of work, Sequoyah completes the syllabary</li>
-                                    <li><strong>1821-1823:</strong> The syllabary spreads rapidly through Cherokee communities</li>
-                                    <li><strong>1825:</strong> The syllabary is officially adopted by the Cherokee Nation</li>
-                                    <li><strong>1828:</strong> First issue of the Cherokee Phoenix newspaper is published using the syllabary</li>
-                                    <li><strong>1830s:</strong> Literacy rates among Cherokee surpass those of surrounding European-American settlers</li>
-                                    <li><strong>2000s:</strong> Digital technology introduces Cherokee fonts and keyboards, helping preserve the writing system</li>
-                                </ul>
-                            </div>
+                    <div class="cherokee-card mb-3">
+                        <div class="card-header">Origins and Evolution</div>
+                        <div class="card-body">
+                            <p>The Cherokee syllabary was invented by Sequoyah (also known as George Guess), a Cherokee silversmith in the early 19th century. This remarkable achievement made him the only known person in history to create a writing system for a language single-handedly without already knowing how to read or write.</p>
+                            
+                            <h5 class="mt-4">Timeline of Development</h5>
+                            <ul class="cherokee-timeline">
+                                <li><strong>1809:</strong> Sequoyah begins work on creating a writing system for Cherokee</li>
+                                <li><strong>1821:</strong> After 12 years of work, Sequoyah completes the syllabary</li>
+                                <li><strong>1821-1823:</strong> The syllabary spreads rapidly through Cherokee communities</li>
+                                <li><strong>1825:</strong> The syllabary is officially adopted by the Cherokee Nation</li>
+                                <li><strong>1828:</strong> First issue of the Cherokee Phoenix newspaper is published using the syllabary</li>
+                                <li><strong>1830s:</strong> Literacy rates among Cherokee surpass those of surrounding European-American settlers</li>
+                                <li><strong>2000s:</strong> Digital technology introduces Cherokee fonts and keyboards, helping preserve the writing system</li>
+                            </ul>
                         </div>
-                        
-                        <div class="card">
-                            <div class="card-header">Fun Facts</div>
-                            <div class="card-body">
-                                <ul>
-                                    <li>The Cherokee syllabary went from invention to widespread literacy in less than a generation.</li>
-                                    <li>Sequoyah initially faced skepticism and was accused of practicing witchcraft when developing the writing system.</li>
-                                    <li>The syllabary contains 85 characters, far fewer than the number of Chinese characters but more than Latin alphabets.</li>
-                                    <li>Apple was the first major technology company to integrate Cherokee language support in iOS and macOS.</li>
-                                    <li>The Cherokee Nation actively preserves the syllabary through immersion schools and language programs.</li>
-                                    <li>Sequoyah's original syllabary included 200 characters, but was eventually reduced to 85 for efficiency.</li>
-                                </ul>
-                            </div>
+                    </div>
+                    
+                    <div class="cherokee-card">
+                        <div class="card-header">Fun Facts</div>
+                        <div class="card-body">
+                            <ul>
+                                <li>The Cherokee syllabary went from invention to widespread literacy in less than a generation.</li>
+                                <li>Sequoyah initially faced skepticism and was accused of practicing witchcraft when developing the writing system.</li>
+                                <li>The syllabary contains 85 characters, far fewer than the number of Chinese characters but more than Latin alphabets.</li>
+                                <li>Apple was the first major technology company to integrate Cherokee language support in iOS and macOS.</li>
+                                <li>The Cherokee Nation actively preserves the syllabary through immersion schools and language programs.</li>
+                                <li>Sequoyah's original syllabary included 200 characters, but was eventually reduced to 85 for efficiency.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-
-        <section class="section useful-links">
-            <h2 class="mb-4">Useful Links</h2>
+        <section class="cherokee-section">
+            <h2 class="cherokee-heading">Useful Links</h2>
             <div class="row">
                 <div class="col-md-6">
-                    <div class="card h-100">
+                    <div class="cherokee-card h-100">
                         <div class="card-header">Learning Resources</div>
                         <div class="card-body">
                             <a href="#" target="_blank">?</a>
@@ -185,7 +225,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card h-100">
+                    <div class="cherokee-card h-100">
                         <div class="card-header">Cultural and Historical Resources</div>
                         <div class="card-body">
                             <a href="#" target="_blank">?</a>
@@ -194,7 +234,7 @@
                 </div>
             </div>
         </section>
-    </div>
+    </main>
 </main>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
