@@ -1,3 +1,219 @@
-.cherokee_background {
-    background-color: #F5F5DC;
+/* Revised Cherokee Cultural Decorative Elements */
+
+/* Color palette based on traditional Cherokee art and natural elements */
+:root {
+    --cherokee-red: #9B2226;
+    --cherokee-brown: #774936;
+    --cherokee-tan: #E9C46A;
+    --cherokee-cream: #F5F5DC;
+    --cherokee-turquoise: #2A9D8F;
+    --cherokee-navy: #264653;
+}
+
+/* Header decoration - inspired by Cherokee double-weave basket patterns */
+.cherokee-header {
+    position: relative;
+    padding: 25px;
+    margin-bottom: 40px;
+    border-bottom: 8px solid var(--cherokee-brown);
+}
+
+.cherokee-header:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: repeating-linear-gradient(
+        90deg, 
+        var(--cherokee-red),
+        var(--cherokee-red) 15px,
+        var(--cherokee-tan) 15px,
+        var(--cherokee-tan) 30px
+    );
+}
+
+/* Seven-pointed star representing the seven Cherokee clans */
+.cherokee-star-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.cherokee-star {
+    position: relative;
+    width: 160px;
+    height: 160px;
+}
+
+.cherokee-star svg {
+    width: 100%;
+    height: 100%;
+}
+
+.cherokee-star-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--cherokee-navy);
+    text-align: center;
+}
+
+/* Section decorative side elements - inspired by Cherokee beadwork */
+.cherokee-section {
+    position: relative;
+    padding: 25px 40px;
+    margin-bottom: 40px;
+    background-color: var(--cherokee-cream);
+    border-radius: 8px;
+}
+
+.cherokee-section:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 12px;
+    background: repeating-linear-gradient(
+        0deg,
+        var(--cherokee-brown) 0px,
+        var(--cherokee-brown) 20px,
+        var(--cherokee-tan) 20px,
+        var(--cherokee-tan) 40px,
+        var(--cherokee-red) 40px,
+        var(--cherokee-red) 60px
+    );
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+/* Decorative heading with syllabary - integrates Cherokee text */
+.cherokee-heading {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--cherokee-brown);
+}
+
+.cherokee-heading:after {
+    content: attr(data-cherokee);
+    display: block;
+    font-size: 14px;
+    color: var(--cherokee-red);
+    margin-top: 5px;
+}
+
+/* Simple syllabary footer for sections */
+.cherokee-syllabary-footer {
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    border-top: 1px solid var(--cherokee-brown);
+    font-size: 18px;
+    color: var(--cherokee-brown);
+    letter-spacing: 5px;
+}
+
+/* Image frame with traditional border pattern */
+.cherokee-image-frame {
+    position: relative;
+    padding: 15px;
+    border: 1px solid var(--cherokee-brown);
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.cherokee-image-frame:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 2px solid var(--cherokee-red);
+    z-index: 0;
+}
+
+.cherokee-image-frame img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Card styling for Cherokee theme */
+.cherokee-card {
+    border: none;
+    border-left: 5px solid var(--cherokee-red);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.cherokee-card .card-header {
+    background-color: var(--cherokee-tan);
+    color: var(--cherokee-navy);
+    font-weight: bold;
+    border-bottom: 2px solid var(--cherokee-brown);
+}
+
+/* Timeline styling */
+.cherokee-timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.cherokee-timeline:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: repeating-linear-gradient(
+        0deg,
+        var(--cherokee-red),
+        var(--cherokee-red) 15px,
+        var(--cherokee-brown) 15px,
+        var(--cherokee-brown) 30px
+    );
+}
+
+.cherokee-timeline li {
+    position: relative;
+    margin-bottom: 15px;
+    padding-left: 15px;
+}
+
+.cherokee-timeline li:before {
+    content: "";
+    position: absolute;
+    left: -30px;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    background-color: var(--cherokee-tan);
+    border: 2px solid var(--cherokee-brown);
+    border-radius: 50%;
+}
+
+/* Sequoyah quote box */
+.sequoyah-quote {
+    font-style: italic;
+    padding: 20px;
+    margin: 30px 0;
+    background-color: rgba(233, 196, 106, 0.2);
+    border-left: 5px solid var(--cherokee-red);
+    position: relative;
+}
+
+/* Background texture for main content */
+.cherokee-background {
+    background-color: var(--cherokee-cream);
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23774936' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
 }

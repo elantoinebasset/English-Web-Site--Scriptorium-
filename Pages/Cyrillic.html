@@ -1,200 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <title>Document</title>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="writing-system.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyrillic Writing System</title>
 
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      background: radial-gradient(ellipse at top, #fffdf8, #f9f6f1);
+      font-family: 'Georgia', serif;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    header, main {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Elegant Floating Cyrillic Letters */
+    .floating-cyrillic {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .floating-cyrillic span {
+      position: absolute;
+      font-size: 2rem;
+      color: rgba(139, 0, 0, 0.15);
+      font-weight: bold;
+      animation: floatCyrillic 20s infinite ease-in-out;
+      white-space: nowrap;
+    }
+
+    @keyframes floatCyrillic {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Section Titles */
+    h2 {
+      font-weight: bold;
+      margin-top: 1.5rem;
+    }
+
+    /* Cyrillic Subtitle */
+    .cyrillic-subtitle {
+      font-size: 1.5rem;
+      color: #8b0000;
+      font-weight: bold;
+    }
+
+    .text-muted {
+      font-size: 0.9rem;
+    }
+
+    .card {
+      border-color: #d3c7bd;
+    }
+
+    .card-header {
+      background-color: #f8f3ec;
+      font-weight: bold;
+      color: #5e3d2c;
+    }
+  </style>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Cyrillic Letter Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const letters = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я'];
+      const container = document.createElement('div');
+      container.className = 'floating-cyrillic';
+      for (let i = 0; i < 20; i++) {
+        const span = document.createElement('span');
+        span.textContent = letters[Math.floor(Math.random() * letters.length)];
+        span.style.left = Math.random() * 100 + 'vw';
+        span.style.top = Math.random() * -100 + 'vh';
+        span.style.animationDuration = (10 + Math.random() * 20) + 's';
+        span.style.fontSize = (1 + Math.random() * 2) + 'rem';
+        container.appendChild(span);
+      }
+      document.body.appendChild(container);
+    });
+  </script>
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="/Index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-              </ul>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
-            </div>
-          </nav>
-    </header>
-<body>
-  <main>
-    <div class="container">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <section class="section">
-            <div class="row align-items-center">
-                <div class="col-md-12">
-                    <div class="chinese-text text-center">
-                      <h2>Cyrillic Writing System</h2>
-                      <p>написание мира</p>
-                      <p class="text-muted small">(Napisaniye Mira – "Writing Peace")</p>                      
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="img-container">
-                        <img src="images/cyrallic/cyrallic letter.jpg" alt="Cherokee Syllabary" class="img-fluid" width="350">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section class="section">
-          <h2 class="mb-4">How to Recognize It?</h2>
-          <div class="card">
-              <div class="card-body">
-                  <h5 class="card-title">Distinctive Features of the Cyrillic Alphabet</h5>
-                  <ul class="list-group list-group-flush">
-                      <li class="list-group-item">
-                          <strong>Alphabetic System:</strong> Each letter represents a single phoneme (sound), similar to Latin and Greek alphabets.
-                      </li>
-                      <li class="list-group-item">
-                          <strong>Slavic Origins:</strong> Originally developed for Slavic languages like Old Church Slavonic; still used in Russian, Bulgarian, Serbian, and others.
-                      </li>
-                      <li class="list-group-item">
-                          <strong>Visual Similarities:</strong> Some letters resemble Latin or Greek letters (e.g., A, B, P), but often represent different sounds.
-                      </li>
-                      <li class="list-group-item">
-                          <strong>Uppercase and Lowercase:</strong> The script includes both capital and lowercase letters, with distinct forms.
-                      </li>
-                      <li class="list-group-item">
-                          <strong>Diacritic Use:</strong> Some languages using Cyrillic add diacritics or additional letters to represent unique sounds.
-                      </li>
-                      <li class="list-group-item">
-                          <strong>Varied Alphabets:</strong> The number of letters varies by language (e.g., 33 in Russian, more in others).
-                      </li>
-                  </ul>
-              </div>
-          </div>
-      </section>      
-
-      <section class="section">
-        <h2 class="mb-4">Writing Basics</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <p>The Cyrillic alphabet is a writing system used in many Slavic and non-Slavic languages. Each character represents an individual sound (phoneme), similar to the Latin alphabet, and the script supports both uppercase and lowercase letters.</p>
-                
-                <div class="card mb-4">
-                    <div class="card-header">
-                        Basic Principles
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li>Written left to right, top to bottom</li>
-                            <li>Each character represents a single sound</li>
-                            <li>Developed for Slavic languages, especially Old Church Slavonic</li>
-                            <li>Includes uppercase and lowercase forms</li>
-                            <li>Punctuation similar to that of the Latin alphabet</li>
-                            <li>Numbers are written using Arabic numerals</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="img-container">
-                    <img src="images/cyrallic/cyrallic chart.jpg" alt="Cyrillic Alphabet Chart" class="img-fluid" width="400">
-                </div>
-            </div>
-        </div>
-    </section>    
-
-    <section class="section">
-      <h2 class="mb-4">History</h2>
-      <div class="row">
-          <div class="col-md-12">
-              <div class="timeline">
-                  <div class="card mb-3">
-                      <div class="card-header">Origins and Evolution</div>
-                      <div class="card-body">
-                          <p>The Cyrillic script was developed in the 9th century by the disciples of Saints Cyril and Methodius, who had earlier created the Glagolitic alphabet. It was designed to translate religious texts into Slavic languages and has since evolved into a widely used script across Eastern Europe and Central Asia.</p>
-                          
-                          <h5 class="mt-4">Timeline of Development</h5>
-                          <ul>
-                              <li><strong>863:</strong> Saints Cyril and Methodius create the Glagolitic alphabet, the precursor to Cyrillic</li>
-                              <li><strong>Late 9th century:</strong> The Cyrillic script is developed by their students in the First Bulgarian Empire</li>
-                              <li><strong>10th century:</strong> Cyrillic is adopted for Old Church Slavonic, the first literary Slavic language</li>
-                              <li><strong>1708:</strong> Peter the Great reforms the script into a more modern civil form for printing in Russia</li>
-                              <li><strong>20th century:</strong> Cyrillic spreads to many non-Slavic languages in the USSR</li>
-                              <li><strong>1990s–2000s:</strong> Post-Soviet reforms adapt Cyrillic usage in various countries</li>
-                              <li><strong>Today:</strong> Over 120 languages use Cyrillic, with continued modernization for digital use</li>
-                          </ul>
-                      </div>
-                  </div>
-                  
-                  <div class="card">
-                      <div class="card-header">Fun Facts</div>
-                      <div class="card-body">
-                          <ul>
-                              <li>The name "Cyrillic" honors Saint Cyril, though he did not create the script directly.</li>
-                              <li>Modern Russian Cyrillic has 33 letters, while Serbian has 30 and others may have more or fewer.</li>
-                              <li>Cyrillic letters are used in both Slavic and non-Slavic languages across Eurasia.</li>
-                              <li>Several countries have replaced Cyrillic with Latin, including Romania, Turkmenistan, and Azerbaijan.</li>
-                              <li>Unicode fully supports Cyrillic, allowing for wide use in digital technology and social media.</li>
-                              <li>Google Translate, Microsoft, and Apple all offer Cyrillic-language support across their platforms.</li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-          </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/Index.html">Home <span class="visually-hidden">(current)</span></a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        </ul>
+        <form class="d-flex my-2 my-lg-0" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
       </div>
-  </section>
-  
+    </nav>
+  </header>
 
+  <main class="container py-5">
+    <section class="section text-center mb-5">
+      <h2>Cyrillic Writing System</h2>
+      <p class="cyrillic-subtitle">написание мира</p>
+      <p class="text-muted">(Napisaniye Mira – "Writing Peace")</p>
+      <img src="images/cyrallic/cyrallic letter.jpg" alt="Cyrillic Script" class="img-fluid mt-3" width="350" />
+    </section>
 
-        <section class="section useful-links">
-            <h2 class="mb-4">Useful Links</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-header">Learning Resources</div>
-                        <div class="card-body">
-                            <a href="#" target="_blank">?</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-header">Cultural and Historical Resources</div>
-                        <div class="card-body">
-                            <a href="#" target="_blank">?</a>
-                        </div>
-                    </div>
-                </div>
+    <section class="section mb-5">
+      <h2>How to Recognize It?</h2>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Distinctive Features of the Cyrillic Alphabet</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Alphabetic System:</strong> Each letter represents a sound.</li>
+            <li class="list-group-item"><strong>Slavic Origins:</strong> Originally created for Old Church Slavonic.</li>
+            <li class="list-group-item"><strong>Visual Similarities:</strong> Looks similar to Latin or Greek but differs.</li>
+            <li class="list-group-item"><strong>Uppercase and Lowercase:</strong> Like Latin script.</li>
+            <li class="list-group-item"><strong>Diacritics:</strong> Some letters include extra marks in certain languages.</li>
+            <li class="list-group-item"><strong>Variability:</strong> Different alphabets for Russian, Serbian, etc.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section mb-5">
+      <h2>Writing Basics</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <p>The Cyrillic alphabet is a writing system used in many Slavic and non-Slavic languages. It includes uppercase and lowercase letters and each symbol represents one sound (phoneme).</p>
+          <div class="card mb-4">
+            <div class="card-header">Basic Principles</div>
+            <div class="card-body">
+              <ul>
+                <li>Left to right orientation</li>
+                <li>Uppercase and lowercase letters</li>
+                <li>Diacritics used in some variants</li>
+                <li>Arabic numerals used for numbers</li>
+              </ul>
             </div>
-        </section>
-    </div>
-</main>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <img src="images/cyrallic/cyrallic chart.jpg" alt="Cyrillic Alphabet Chart" class="img-fluid" width="400" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section mb-5">
+      <h2>History</h2>
+      <div class="card mb-3">
+        <div class="card-header">Origins and Evolution</div>
+        <div class="card-body">
+          <p>The Cyrillic script was developed in the 9th century by disciples of Saints Cyril and Methodius. It was created to serve the Slavic peoples and adapted from the Glagolitic script to translate religious texts.</p>
+          <ul>
+            <li><strong>863:</strong> Glagolitic alphabet invented</li>
+            <li><strong>9th–10th century:</strong> Cyrillic developed and spread</li>
+            <li><strong>1708:</strong> Reformed by Peter the Great</li>
+            <li><strong>Today:</strong> Used by 120+ languages across Eurasia</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">Fun Facts</div>
+        <div class="card-body">
+          <ul>
+            <li>"Cyrillic" is named after Saint Cyril, though he did not directly create it.</li>
+            <li>Modern Russian uses 33 Cyrillic letters.</li>
+            <li>Some post-Soviet countries switched to Latin alphabets.</li>
+            <li>Unicode supports full Cyrillic script in digital platforms.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section mb-5">
+      <h2>Useful Links</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-header">Learning Resources</div>
+            <div class="card-body">
+              <a href="#" target="_blank">?</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-header">Cultural and Historical Resources</div>
+            <div class="card-body">
+              <a href="#" target="_blank">?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
