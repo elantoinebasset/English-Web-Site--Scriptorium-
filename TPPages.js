@@ -366,7 +366,7 @@ document.querySelector("#myAfricaCard").addEventListener("click", function() {
     }, 200);  
 
     setTimeout(() => {
-        window.location.href = "/Pages/China.html";
+        window.location.href = "/Pages/Arabic.html";
     }, 3500);
 });
 
