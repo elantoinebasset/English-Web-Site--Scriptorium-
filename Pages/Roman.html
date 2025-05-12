@@ -1,187 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Roman Writing System</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="writing-system.css">
+    <style>
+        /* Reset and base styling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Times New Roman', serif;
+            overflow-x: hidden;
+            color: #4a3c2d;
+        }
+        
+        /* Full page decorative background */
+        .roman-page-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: #f5f0e6;
+            overflow: hidden;
+        }
+        
+        /* Ancient papyrus texture overlay */
+        .papyrus-texture {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(245, 240, 230, 0.8) 2px, transparent 2px),
+                            linear-gradient(90deg, rgba(210, 190, 165, 0.2) 2px, transparent 2px);
+            background-size: 100px 100px, 100px 100px;
+            opacity: 0.3;
+        }
+        
+        /* Decorative Roman architectural border */
+        .roman-border-top, .roman-border-bottom {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: linear-gradient(to right, #d5bc8c, #e8d8b8, #d5bc8c);
+            z-index: 10;
+        }
+        
+        .roman-border-top {
+            top: 0;
+            border-bottom: 3px solid #b9a17c;
+        }
+        
+        .roman-border-bottom {
+            bottom: 0;
+            border-top: 3px solid #b9a17c;
+        }
+        
+        /* Column pattern in borders */
+        .column-pattern {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .column-element {
+            width: 20px;
+            height: 100%;
+            background: linear-gradient(to bottom, #c4a875, #d5bc8c, #c4a875);
+            position: relative;
+        }
+        
+        .column-element:before, .column-element:after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 8px;
+            background: #c4a875;
+            border-radius: 3px;
+        }
+        
+        .column-element:before {
+            top: 5px;
+        }
+        
+        .column-element:after {
+            bottom: 5px;
+        }
+        
+        /* Side borders with Roman design */
+        .roman-border-left, .roman-border-right {
+            position: absolute;
+            top: 50px;
+            bottom: 50px;
+            width: 30px;
+            background: linear-gradient(to bottom, #d5bc8c, #e8d8b8, #d5bc8c);
+            z-index: 10;
+        }
+        
+        .roman-border-left {
+            left: 0;
+            border-right: 3px solid #b9a17c;
+        }
+        
+        .roman-border-right {
+            right: 0;
+            border-left: 3px solid #b9a17c;
+        }
+        
+        /* Roman text watermarks */
+        .latin-text-watermark {
+            position: absolute;
+            font-family: 'Times New Roman', serif;
+            color: rgba(165, 140, 115, 0.1);
+            font-style: italic;
+            transform: rotate(-5deg);
+            white-space: nowrap;
+        }
+        
+        .watermark-1 {
+            top: 20%;
+            left: 10%;
+            font-size: 8rem;
+        }
+        
+        .watermark-2 {
+            bottom: 25%;
+            right: 5%;
+            font-size: 5rem;
+        }
+        
+        .watermark-3 {
+            top: 60%;
+            left: 30%;
+            font-size: 7rem;
+        }
+        
+        /* Decorative Roman numerals */
+        .roman-numerals-corner {
+            position: absolute;
+            font-family: 'Times New Roman', serif;
+            color: rgba(140, 120, 100, 0.4);
+            font-weight: bold;
+            font-size: 1.5rem;
+            padding: 10px;
+            z-index: 20;
+        }
+        
+        .numerals-top-left {
+            top: 60px;
+            left: 40px;
+        }
+        
+        .numerals-bottom-right {
+            bottom: 60px;
+            right: 40px;
+        }
+        
+        /* Decorative laurel wreath corners */
+        .laurel-corner {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            z-index: 20;
+        }
+        
+        .laurel-top-right {
+            top: 55px;
+            right: 35px;
+        }
+        
+        .laurel-bottom-left {
+            bottom: 55px;
+            left: 35px;
+            transform: rotate(180deg);
+        }
+        
+        /* Scrollwork decorations */
+        .scrollwork {
+            position: absolute;
+            width: 200px;
+            height: 40px;
+            z-index: 15;
+        }
+        
+        .scrollwork-left {
+            left: 50px;
+            top: 50%;
+            transform: translateY(-50%) rotate(90deg);
+        }
+        
+        .scrollwork-right {
+            right: 50px;
+            top: 50%;
+            transform: translateY(-50%) rotate(-90deg);
+        }
+        
+        /* Content container to ensure content is still readable */
+        .content-container {
+            position: relative;
+            margin: 70px 50px;
+            min-height: calc(100vh - 140px);
+            z-index: 100;
+        }
+        
+        /* Roman letters alphabet display */
+        .roman-alphabet {
+            position: absolute;
+            bottom: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            font-family: 'Times New Roman', serif;
+            font-size: 1.5rem;
+            color: rgba(140, 120, 100, 0.6);
+            letter-spacing: 6px;
+            z-index: 15;
+        }
 
+        /* Navbar styling */
+        .navbar {
+            background: linear-gradient(to right, #d5bc8c, #e8d8b8, #d5bc8c) !important;
+            border-bottom: 2px solid #b9a17c;
+            margin-top: 50px;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        .navbar-brand, .nav-link {
+            color: #5d4037 !important;
+        }
+        
+        .nav-link:hover {
+            color: #3e2723 !important;
+        }
+        
+        .dropdown-menu {
+            background-color: #e8d8b8;
+            border: 1px solid #b9a17c;
+        }
+        
+        .dropdown-item {
+            color: #5d4037;
+        }
+        
+        .dropdown-item:hover {
+            background-color: #d5bc8c;
+            color: #3e2723;
+        }
+
+        /* Section styling */
+        .section {
+            background-color: rgba(245, 240, 230, 0.7);
+            border: 1px solid #d5bc8c;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 10px rgba(165, 140, 115, 0.1);
+        }
+
+        .section h2 {
+            color: #5d4037;
+            border-bottom: 2px solid #d5bc8c;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            font-family: 'Times New Roman', serif;
+        }
+
+        /* Roman text styles */
+        .roman-text {
+            font-family: 'Times New Roman', serif;
+            color: #5d4037;
+        }
+
+        .roman-text h2 {
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .roman-text p {
+            font-style: italic;
+            font-size: 1.2rem;
+        }
+
+        /* Card styling */
+        .card {
+            background-color: rgba(245, 240, 230, 0.7);
+            border: 1px solid #d5bc8c;
+        }
+
+        .card-header {
+            background-color: rgba(213, 188, 140, 0.5);
+            color: #5d4037;
+            font-weight: bold;
+        }
+
+        .card-title {
+            color: #5d4037;
+        }
+
+        .list-group-item {
+            background-color: rgba(245, 240, 230, 0.5);
+        }
+
+        /* Image container */
+        .img-container {
+            border: 3px solid #d5bc8c;
+            padding: 5px;
+            background-color: #f5f0e6;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, #d5bc8c, #e8d8b8, #d5bc8c);
+            border-top: 2px solid #b9a17c;
+            color: #5d4037;
+            padding: 20px 0;
+            margin-top: 30px;
+            text-align: center;
+            font-family: 'Times New Roman', serif;
+            position: relative;
+            z-index: 100;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="/Index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-              </ul>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
+    <!-- Full page decorative background -->
+    <div class="roman-page-background">
+        <!-- Papyrus texture overlay -->
+        <div class="papyrus-texture"></div>
+        
+        <!-- Decorative borders -->
+        <div class="roman-border-top">
+            <div class="column-pattern">
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
             </div>
-          </nav>
-    </header>
-<body>
-  <main>
-    <div class="container">
-  
-      <section class="section">
-        <div class="row align-items-center">
-          <div class="col-md-12">
-            <div class="roman-text text-center">
-              <h2>Roman Writing System</h2>
-              <p>Pax scribere</p>
-              <p class="text-muted small">pax scribere – Writing Peace (in Latin)</p>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="img-container">
-              <img src="images/roman/roman letter.jpg" alt="Roman Script Example" class="img-fluid" width="350">
-            </div>
-          </div>
         </div>
-      </section>
-  
-      <section class="section">
-        <h2 class="mb-4">How to Recognize It?</h2>
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Distinctive Features of Roman Script</h5>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                <strong>Horizontal Script:</strong> Written from left to right in horizontal lines.
-              </li>
-              <li class="list-group-item">
-                <strong>Widely Used:</strong> Official writing system for most European languages and globally adopted in technology and science.
-              </li>
-              <li class="list-group-item">
-                <strong>Alphabet-Based:</strong> Consists of 26 basic letters (in English), with variations for other languages using accents or additional characters.
-              </li>
-              <li class="list-group-item">
-                <strong>Romanization:</strong> Other writing systems like Korean, Arabic, or Japanese often use Roman letters for teaching or input methods.
-              </li>
-            </ul>
-          </div>
+        
+        <div class="roman-border-bottom">
+            <div class="column-pattern">
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+                <div class="column-element"></div>
+            </div>
         </div>
-      </section>
-  
-      <section class="section">
-        <h2 class="mb-4">Writing Basics</h2>
-        <div class="row">
-          <div class="col-md-6">
-            <p>The Roman script dates back to ancient Rome and has become the most widely used writing system in the world today.</p>
-  
-            <div class="card mb-4">
-              <div class="card-header">
-                Basic Principles
-              </div>
-              <div class="card-body">
-                <ul>
-                  <li>Written left to right, in horizontal lines</li>
-                  <li>Uppercase and lowercase letter forms</li>
-                  <li>Used in English, French, German, Spanish, and many more languages</li>
-                  <li>26 core letters, with accented or modified versions depending on language</li>
-                  <li>Basis for international keyboards and modern digital communication</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="img-container">
-              <img src="images/roman/roman alphabet.jpg" alt="Roman Script Chart" class="img-fluid" width="500">
-            </div>
-          </div>
+        
+        <div class="roman-border-left"></div>
+        <div class="roman-border-right"></div>
+        
+        <!-- Latin text watermarks -->
+        <div class="latin-text-watermark watermark-1">Litterae Romanae</div>
+        <div class="latin-text-watermark watermark-2">Carpe Diem</div>
+        <div class="latin-text-watermark watermark-3">Veni Vidi Vici</div>
+        
+        <!-- Roman numerals -->
+        <div class="roman-numerals-corner numerals-top-left">MCMLXV</div>
+        <div class="roman-numerals-corner numerals-bottom-right">MMXXV</div>
+        
+        <!-- Laurel wreath corners -->
+        <div class="laurel-corner laurel-top-right">
+            <svg viewBox="0 0 100 100">
+                <g fill="none" stroke="#a89472" stroke-width="1.5">
+                    <path d="M30,10 Q35,30 45,40 Q35,45 40,60 Q25,50 30,30 Q15,40 20,60 Q5,45 10,15 Q20,25 30,10"/>
+                    <path d="M45,40 Q55,50 65,45 Q60,35 70,25 Q55,30 45,20 Q50,35 45,40"/>
+                </g>
+            </svg>
         </div>
-      </section>
-  
-      <section class="section">
-        <h2 class="mb-4">History</h2>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="timeline">
-              <div class="card mb-3">
-                <div class="card-header">Origins and Evolution</div>
-                <div class="card-body">
-                  <p>The Roman (Latin) alphabet evolved from the Etruscan script, which was adapted from Greek, and was formalized in the Roman Empire. It spread through conquest, religion, and colonization.</p>
-  
-                  <h5 class="mt-4">Timeline of Development</h5>
-                  <ul>
-                    <li><strong>~700 BCE:</strong> Early Latin alphabet emerges from Etruscan and Greek scripts</li>
-                    <li><strong>1st Century BCE:</strong> Latin becomes dominant script of Roman Empire</li>
-                    <li><strong>Middle Ages:</strong> Widespread in Europe, adapted to new languages</li>
-                    <li><strong>15th Century:</strong> Printing press accelerates global adoption</li>
-                    <li><strong>Modern Day:</strong> Dominant in global education, science, and technology</li>
-                  </ul>
-                </div>
-              </div>
-  
-              <div class="card">
-                <div class="card-header">Fun Facts</div>
-                <div class="card-body">
-                  <ul>
-                    <li>The letters "J", "U", and "W" were added much later than the original Latin alphabet</li>
-                    <li>The Roman script is used by over 70% of the world’s population</li>
-                    <li>Emojis and ASCII symbols evolved from Roman character encoding systems</li>
-                    <li>It’s the foundation for almost all web and app interface text worldwide</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+        
+        <div class="laurel-corner laurel-bottom-left">
+            <svg viewBox="0 0 100 100">
+                <g fill="none" stroke="#a89472" stroke-width="1.5">
+                    <path d="M30,10 Q35,30 45,40 Q35,45 40,60 Q25,50 30,30 Q15,40 20,60 Q5,45 10,15 Q20,25 30,10"/>
+                    <path d="M45,40 Q55,50 65,45 Q60,35 70,25 Q55,30 45,20 Q50,35 45,40"/>
+                </g>
+            </svg>
         </div>
-      </section>
-  
-      <section class="section useful-links">
-        <h2 class="mb-4">Useful Links</h2>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="card h-100">
-              <div class="card-header">Learning Resources</div>
-              <div class="card-body">
-                <a href="#" target="_blank">?</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card h-100">
-              <div class="card-header">Cultural and Historical Resources</div>
-              <div class="card-body">
-                <a href="#" target="_blank">?</a>
-              </div>
-            </div>
-          </div>
+        
+        <!-- Scrollwork decorations -->
+        <div class="scrollwork scrollwork-left">
+            <svg viewBox="0 0 200 40">
+                <path d="M10,20 Q30,5 50,20 Q70,35 90,20 Q110,5 130,20 Q150,35 170,20 Q190,5 200,15" 
+                    fill="none" stroke="#a89472" stroke-width="2"/>
+                <path d="M10,25 Q30,40 50,25 Q70,10 90,25 Q110,40 130,25 Q150,10 170,25 Q190,40 200,30" 
+                    fill="none" stroke="#a89472" stroke-width="2"/>
+            </svg>
         </div>
-      </section>
+        
+        <div class="scrollwork scrollwork-right">
+            <svg viewBox="0 0 200 40">
+                <path d="M10,20 Q30,5 50,20 Q70,35 90,20 Q110,5 130,20 Q150,35 170,20 Q190,5 200,15" 
+                    fill="none" stroke="#a89472" stroke-width="2"/>
+                <path d="M10,25 Q30,40 50,25 Q70,10 90,25 Q110,40 130,25 Q150,10 170,25 Q190,40 200,30" 
+                    fill="none" stroke="#a89472" stroke-width="2"/>
+            </svg>
+        </div>
+        
+        <!-- Roman alphabet display -->
+        <div class="roman-alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
     </div>
-  </main>  
+    
+    <!-- Main content container -->
+    <div class="content-container">
+        <!-- Navigation -->
+        <header>
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <a class="navbar-brand" href="#">
+                  <img class="Imge_logo" src="Scriptorium_logo.png" alt="">
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/Index.html">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Links
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="https://www.duolingo.com">Duolingo</a>
+                      <a class="dropdown-item" href="https://unesdoc.unesco.org/ark:/48223/pf0000260736">writing peace (Unesco)</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="https://noe.blanqu.art/">Something else here, yeah i don't know</a>
+                    </div>
+                  </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+              </div>
+          </nav>
+  
+      </header>
+
+        <!-- Main content -->
+        <main>
+            <div class="container mt-5">
+                <section class="section">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="roman-text text-center">
+                                <h2>Roman Writing System</h2>
+                                <p>Pax scribere</p>
+                                <p class="text-muted small">pax scribere – Writing Peace (in Latin)</p>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center mt-4">
+                            <div class="img-container">
+                                <img src="images/roman/roman letter.jpg" alt="Roman Script Example" class="img-fluid" width="350">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+                <section class="section">
+                    <h2 class="mb-4">How to Recognize It?</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Distinctive Features of Roman Script</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <strong>Horizontal Script:</strong> Written from left to right in horizontal lines.
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Widely Used:</strong> Official writing system for most European languages and globally adopted in technology and science.
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Alphabet-Based:</strong> Consists of 26 basic letters (in English), with variations for other languages using accents or additional characters.
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Romanization:</strong> Other writing systems like Korean, Arabic, or Japanese often use Roman letters for teaching or input methods.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            
+                <section class="section">
+                    <h2 class="mb-4">Writing Basics</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>The Roman script dates back to ancient Rome and has become the most widely used writing system in the world today.</p>
+                
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    Basic Principles
+                                </div>
+                                <div class="card-body">
+                                    <ul>
+                                        <li>Written left to right, in horizontal lines</li>
+                                        <li>Uppercase and lowercase letter forms</li>
+                                        <li>Used in English, French, German, Spanish, and many more languages</li>
+                                        <li>26 core letters, with accented or modified versions depending on language</li>
+                                        <li>Basis for international keyboards and modern digital communication</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="img-container">
+                                <img src="images/roman/roman alphabet.jpg" alt="Roman Script Chart" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+                <section class="section">
+                    <h2 class="mb-4">History</h2>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="timeline">
+                                <div class="card mb-3">
+                                    <div class="card-header">Origins and Evolution</div>
+                                    <div class="card-body">
+                                        <p>The Roman (Latin) alphabet evolved from the Etruscan script, which was adapted from Greek, and was formalized in the Roman Empire. It spread through conquest, religion, and colonization.</p>
+                
+                                        <h5 class="mt-4">Timeline of Development</h5>
+                                        <ul>
+                                            <li><strong>~700 BCE:</strong> Early Latin alphabet emerges from Etruscan and Greek scripts</li>
+                                            <li><strong>1st Century BCE:</strong> Latin becomes dominant script of Roman Empire</li>
+                                            <li><strong>Middle Ages:</strong> Widespread in Europe, adapted to new languages</li>
+                                            <li><strong>15th Century:</strong> Printing press accelerates global adoption</li>
+                                            <li><strong>Modern Day:</strong> Dominant in global education, science, and technology</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                
+                                <div class="card">
+                                    <div class="card-header">Fun Facts</div>
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>The letters "J", "U", and "W" were added much later than the original Latin alphabet</li>
+                                            <li>The Roman script is used by over 70% of the world's population</li>
+                                            <li>Emojis and ASCII symbols evolved from Roman character encoding systems</li>
+                                            <li>It's the foundation for almost all web and app interface text worldwide</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+                <section class="section useful-links">
+                    <h2 class="mb-4">Useful Links</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-header">Learning Resources</div>
+                                <div class="card-body">
+                                    <ul>
+                                      <li><a href="#" class="text-decoration-none">?</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-header">Cultural and Historical Resources</div>
+                                <div class="card-body">
+                                    <ul>
+                                        <li><a href="#" class="text-decoration-none">?</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
 </body>
 </html>

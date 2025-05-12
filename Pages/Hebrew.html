@@ -1,198 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hebrew Writing System | Scriptorium</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <title>Document</title>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="writing-system.css">
-
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <style>
+        /* Hebrew-inspired decorative elements */
+        body {
+            background-color: #f8f7f2;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Cpath d='M25,5 L30,20 L45,25 L30,30 L25,45 L20,30 L5,25 L20,20 Z' fill='none' stroke='%23e0e0e0' stroke-width='0.5'/%3E%3C/svg%3E");
+            opacity: 0.15;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        header {
+            border-bottom: 4px solid #c0a062;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+        }
+        
+        .navbar {
+            padding: 0.5rem 1rem;
+        }
+        
+        .Imge_logo {
+            max-height: 50px;
+        }
+        
+        .hero-banner {
+            background: linear-gradient(135deg, #1a365d 0%, #0d4a8f 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M50,10 L60,40 L90,50 L60,60 L50,90 L40,60 L10,50 L40,40 Z' fill='none' stroke='%23ffffff' stroke-width='0.5'/%3E%3C/svg%3E");
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        
+        .hero-title {
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hebrew-text {
+            direction: rtl;
+            font-family: 'David Libre', 'Times New Roman', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .decorative-border {
+            border: 2px solid #c0a062;
+            border-radius: 5px;
+            padding: 1.5rem;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .decorative-border::before,
+        .decorative-border::after {
+            content: "✡";
+            position: absolute;
+            color: #c0a062;
+            font-size: 1.5rem;
+        }
+        
+        .decorative-border::before {
+            top: -0.9rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #f8f7f2;
+            padding: 0 0.5rem;
+        }
+        
+        .decorative-border::after {
+            bottom: -0.9rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #f8f7f2;
+            padding: 0 0.5rem;
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section h2 {
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            color: #1a365d;
+        }
+        
+        .section h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #c0a062;
+        }
+        
+        .card {
+            border-color: #e0e0e0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-header {
+            background-color: #1a365d;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .img-container {
+            text-align: center;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+        
+        .img-container img {
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline .card {
+            border-left: 4px solid #c0a062;
+        }
+        
+        footer {
+            background-color: #1a365d;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-ornament {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #c0a062;
+            font-size: 1.5rem;
+        }
+        
+        .menorah-divider {
+            text-align: center;
+            margin: 2rem 0;
+            height: 40px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='40' viewBox='0 0 200 40'%3E%3Cpath d='M100,5 L100,35 M80,35 L120,35 M85,35 L85,15 C85,12 88,10 91,10 C94,10 97,12 97,15 L97,35 M103,35 L103,15 C103,12 106,10 109,10 C112,10 115,12 115,15 L115,35 M70,35 L70,15 C70,12 73,10 76,10 C79,10 82,12 82,15 L82,35 M118,35 L118,15 C118,12 121,10 124,10 C127,10 130,12 130,15 L130,35' stroke='%23c0a062' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .corner-decoration {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            opacity: 0.5;
+        }
+        
+        .corner-decoration.top-left {
+            top: 0;
+            left: 0;
+            border-top: 3px solid #c0a062;
+            border-left: 3px solid #c0a062;
+        }
+        
+        .corner-decoration.top-right {
+            top: 0;
+            right: 0;
+            border-top: 3px solid #c0a062;
+            border-right: 3px solid #c0a062;
+        }
+        
+        .corner-decoration.bottom-left {
+            bottom: 0;
+            left: 0;
+            border-bottom: 3px solid #c0a062;
+            border-left: 3px solid #c0a062;
+        }
+        
+        .corner-decoration.bottom-right {
+            bottom: 0;
+            right: 0;
+            border-bottom: 3px solid #c0a062;
+            border-right: 3px solid #c0a062;
+        }
+        
+        .useful-links a {
+            color: #0d4a8f;
+            text-decoration: none;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .useful-links a::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #c0a062;
+        }
+        
+        .hebrew-letter-background {
+            position: fixed;
+            top: 50%;
+            right: 5%;
+            font-family: 'David Libre', serif;
+            font-size: 20rem;
+            color: rgba(0, 0, 0, 0.03);
+            transform: translateY(-50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .alef-background {
+            right: 5%;
+        }
+        
+        .shin-background {
+            left: 5%;
+        }
+        
+        /* Decorative side elements */
+        .side-decoration {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 15px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='25' viewBox='0 0 15 25'%3E%3Cpath d='M7.5,1 L14,7.5 L7.5,14 L1,7.5 Z' stroke='%23c0a062' stroke-width='0.5' fill='none'/%3E%3C/svg%3E");
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .side-decoration.left {
+            left: 0;
+        }
+        
+        .side-decoration.right {
+            right: 0;
+        }
+        
+        /* Calligraphy banner */
+        .calligraphy-banner {
+            width: 100%;
+            height: auto;
+            margin-bottom: 2rem;
+            max-height: 150px;
+        }
+        
+        /* Image caption styling */
+        .img-caption {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hebrew-letter-background {
+                display: none;
+            }
+            
+            .side-decoration {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Large decorative Hebrew letters in background -->
+    <div class="hebrew-letter-background alef-background">א</div>
+    <div class="hebrew-letter-background shin-background">ש</div>
+    
+    <!-- Side decorations -->
+    <div class="side-decoration left"></div>
+    <div class="side-decoration right"></div>
+
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="/Index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-              </ul>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img class="Imge_logo" src="Scriptorium_logo.png" alt="Scriptorium Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="/Index.html">Home <span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Links
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="https://www.duolingo.com">Duolingo</a>
+                        <a class="dropdown-item" href="https://unesdoc.unesco.org/ark:/48223/pf0000260736">Writing Peace (UNESCO)</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="https://noe.blanqu.art/">Resources</a>
+                      </div>
+                    </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0 d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+                </div>
             </div>
-          </nav>
+        </nav>
     </header>
 
-<body>
-  <main>
-    <div class="container">
-  
-      <section class="section">
-        <div class="row align-items-center">
-          <div class="col-md-12">
-            <div class="chinese-text text-center">
-              <h2>Hebrew Writing System</h2>
-              <p>כתב שלום</p>
-              <p class="text-muted small">(Ktav Shalom – "Writing Peace")</p>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="img-container">
-              <img src="images/hebrew/hebrew letter.jpg" alt="Hebrew Script" class="img-fluid" width="350">
-            </div>
-          </div>
-        </div>
-      </section>
-  
-      <section class="section">
-        <h2 class="mb-4">How to Recognize It?</h2>
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Distinctive Features of the Hebrew Alphabet</h5>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                <strong>Right to Left:</strong> Hebrew is written from right to left.
-              </li>
-              <li class="list-group-item">
-                <strong>22 Letters:</strong> Only consonants are represented in the main script.
-              </li>
-              <li class="list-group-item">
-                <strong>No Uppercase:</strong> All letters have a single form; there’s no case distinction.
-              </li>
-              <li class="list-group-item">
-                <strong>Square Script:</strong> Modern Hebrew uses a blocky, square-shaped script.
-              </li>
-              <li class="list-group-item">
-                <strong>Vowel Markings:</strong> Optional diacritical marks (nikkud) indicate vowels, mostly for children or religious texts.
-              </li>
-              <li class="list-group-item">
-                <strong>Special Final Forms:</strong> Five letters change form when appearing at the end of a word.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-  
-      <section class="section">
-        <h2 class="mb-4">Writing Basics</h2>
-        <div class="row">
-          <div class="col-md-6">
-            <p>The Hebrew script, used since the first millennium BCE, is a consonant-based writing system originally used for ancient Hebrew and now for modern Hebrew, Yiddish, and other Jewish languages. It's a key element of Jewish identity and tradition.</p>
-  
-            <div class="card mb-4">
-              <div class="card-header">
-                Basic Principles
-              </div>
-              <div class="card-body">
-                <ul>
-                  <li>Written from right to left</li>
-                  <li>22 consonantal letters</li>
-                  <li>No uppercase/lowercase distinction</li>
-                  <li>Five final letter forms (sofit)</li>
-                  <li>Vowel markings used in educational and religious contexts</li>
-                  <li>No punctuation in ancient texts; modern Hebrew uses standard punctuation</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="img-container">
-              <img src="images/hebrew/hebrew alphabet.png" alt="Hebrew Alphabet Chart" class="img-fluid" width="700">
-            </div>
-          </div>
-        </div>
-      </section>
-  
-      <section class="section">
-        <h2 class="mb-4">History</h2>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="timeline">
-              <div class="card mb-3">
-                <div class="card-header">Origins and Evolution</div>
-                <div class="card-body">
-                  <p>The Hebrew alphabet evolved from the Phoenician script and has undergone several transformations—from Paleo-Hebrew to the modern "Ashuri" script used today. It is deeply tied to Jewish liturgical, cultural, and national identity.</p>
-  
-                  <h5 class="mt-4">Timeline of Development</h5>
-                  <ul>
-                    <li><strong>10th century BCE:</strong> Earliest known Hebrew inscriptions (Paleo-Hebrew)</li>
-                    <li><strong>6th century BCE:</strong> Adoption of Aramaic script during Babylonian exile</li>
-                    <li><strong>2nd century CE:</strong> Formalization of square Hebrew script</li>
-                    <li><strong>Middle Ages:</strong> Use in Jewish scholarship and codices, vocalization developed</li>
-                    <li><strong>20th century:</strong> Revival of Hebrew as a spoken and written language</li>
-                  </ul>
+    <main>
+        <!-- Hero Banner -->
+        <section class="hero-banner">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-12 text-center">
+                        <h1 class="hero-title">Hebrew Writing System</h1>
+                        <div class="hebrew-text">כתב שלום</div>
+                        <p class="lead">(Ktav Shalom – "Writing Peace")</p>
+                    </div>
                 </div>
-              </div>
-  
-              <div class="card">
-                <div class="card-header">Fun Facts</div>
-                <div class="card-body">
-                  <ul>
-                    <li>Hebrew is one of the few ancient languages revived for modern use.</li>
-                    <li>It has no written vowels in normal texts—readers infer them from context.</li>
-                    <li>The Torah, Jewish holy scripture, is written in Hebrew on parchment scrolls.</li>
-                    <li>Used in Jewish religious rituals, academic study, and Israeli society.</li>
-                    <li>Yiddish also uses Hebrew script with slight modifications.</li>
-                    <li>Modern Hebrew evolved alongside the Zionist movement in the 19th–20th centuries.</li>
-                  </ul>
+            </div>
+        </section>
+
+        <div class="container">
+          <section class="section">
+            <div class="decorative-border">
+              <div class="corner-decoration top-left"></div>
+              <div class="corner-decoration top-right"></div>
+              <div class="corner-decoration bottom-left"></div>
+              <div class="corner-decoration bottom-right"></div>
+          
+              <div class="d-flex justify-content-center">
+                <div class="img-container text-center">
+                  <img src="images/hebrew/hebrew letter.jpg" alt="Hebrew Script" class="img-fluid rounded mx-auto d-block" width="350">
+                  <p class="img-caption mt-2">Ancient Hebrew inscription</p>
                 </div>
               </div>
             </div>
-          </div>
+          </section>
+          
+
+            <div class="menorah-divider"></div>
+
+            <section class="section">
+                <h2>How to Recognize It?</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Distinctive Features of the Hebrew Alphabet</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Right to Left:</strong> Hebrew is written from right to left.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>22 Letters:</strong> Only consonants are represented in the main script.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>No Uppercase:</strong> All letters have a single form; there's no case distinction.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Square Script:</strong> Modern Hebrew uses a blocky, square-shaped script.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Vowel Markings:</strong> Optional diacritical marks (nikkud) indicate vowels, mostly for children or religious texts.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Special Final Forms:</strong> Five letters change form when appearing at the end of a word.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="menorah-divider"></div>
+
+            <section class="section">
+                <h2>Writing Basics</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>The Hebrew script, used since the first millennium BCE, is a consonant-based writing system originally used for ancient Hebrew and now for modern Hebrew, Yiddish, and other Jewish languages. It's a key element of Jewish identity and tradition.</p>
+
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                Basic Principles
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>Written from right to left</li>
+                                    <li>22 consonantal letters</li>
+                                    <li>No uppercase/lowercase distinction</li>
+                                    <li>Five final letter forms (sofit)</li>
+                                    <li>Vowel markings used in educational and religious contexts</li>
+                                    <li>No punctuation in ancient texts; modern Hebrew uses standard punctuation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="img-container">
+                            <img src="images/hebrew/hebrew alphabet.png" alt="Hebrew Alphabet Chart" class="img-fluid rounded">
+                            <p class="img-caption">The complete Hebrew alphabet with names and phonetic values</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="menorah-divider"></div>
+
+            <section class="section">
+                <h2>History</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="timeline">
+                            <div class="card mb-3">
+                                <div class="card-header">Origins and Evolution</div>
+                                <div class="card-body">
+                                    <p>The Hebrew alphabet evolved from the Phoenician script and has undergone several transformations—from Paleo-Hebrew to the modern "Ashuri" script used today. It is deeply tied to Jewish liturgical, cultural, and national identity.</p>
+
+                                    <h5 class="mt-4">Timeline of Development</h5>
+                                    <ul>
+                                        <li><strong>10th century BCE:</strong> Earliest known Hebrew inscriptions (Paleo-Hebrew)</li>
+                                        <li><strong>6th century BCE:</strong> Adoption of Aramaic script during Babylonian exile</li>
+                                        <li><strong>2nd century CE:</strong> Formalization of square Hebrew script</li>
+                                        <li><strong>Middle Ages:</strong> Use in Jewish scholarship and codices, vocalization developed</li>
+                                        <li><strong>20th century:</strong> Revival of Hebrew as a spoken and written language</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header">Fun Facts</div>
+                                <div class="card-body">
+                                    <ul>
+                                        <li>Hebrew is one of the few ancient languages revived for modern use.</li>
+                                        <li>It has no written vowels in normal texts—readers infer them from context.</li>
+                                        <li>The Torah, Jewish holy scripture, is written in Hebrew on parchment scrolls.</li>
+                                        <li>Used in Jewish religious rituals, academic study, and Israeli society.</li>
+                                        <li>Yiddish also uses Hebrew script with slight modifications.</li>
+                                        <li>Modern Hebrew evolved alongside the Zionist movement in the 19th–20th centuries.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="menorah-divider"></div>
+
+            <section class="section useful-links">
+                <h2 class="mb-4">Useful Links</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-header">Learning Resources</div>
+                            <div class="card-body">
+                                <ul class="list-unstyled">
+                                  <li><a href="#" target="_blank">?</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-header">Cultural and Historical Resources</div>
+                            <div class="card-body">
+                                <ul class="list-unstyled">
+                                    <li><a href="#" target="_blank">?</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="menorah-divider"></div>
         </div>
-      </section>
-  
-      <section class="section useful-links">
-        <h2 class="mb-4">Useful Links</h2>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="card h-100">
-              <div class="card-header">Learning Resources</div>
-              <div class="card-body">
-                <a href="#" target="_blank">?</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card h-100">
-              <div class="card-header">Cultural and Historical Resources</div>
-              <div class="card-body">
-                <a href="#" target="_blank">?</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  </main>  
+    </main>
 </body>
 </html>
