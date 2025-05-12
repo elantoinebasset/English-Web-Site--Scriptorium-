@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -5,14 +7,267 @@
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="writing-system.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        /* Tibetan Theme */
+        body {
+            background-color: #fcf7e9; /* Warm color reminiscent of parchment */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
 
+        main {
+            flex: 1;
+        }
+
+.prayer-flags {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 21%;
+        }
+
+        .prayer-flags2 {
+            position: absolute;
+            top: 3%;
+            left: 79%;
+            width: 21%;
+        }
+        .prayer-flags3 {
+            position: absolute;
+            top: 21%;
+            left: 79%;
+            width: 21%;
+        }
+                .prayer-flags4 {
+            position: absolute;
+            top: 23%;
+            left: 0;
+            width: 21%;
+        }
+                        .prayer-flags5 {
+            position: absolute;
+            top: 40%;
+            left: 0;
+            width: 21%;
+        }
+                        .prayer-flags6 {
+            position: absolute;
+            top: 45%;
+            left: 78%;
+            width: 22%;
+        }
+                                .prayer-flags7 {
+            position: absolute;
+            top: 60%;
+            left: 0;
+            width: 21%;
+        }
+                        .prayer-flags8 {
+            position: absolute;
+            top: 65%;
+            left: 79%;
+            width: 21%;
+        }
+
+        /* Tibetan-themed headings */
+        h2 {
+            color: #8b2131; /* Burgundy red */
+            font-family: 'Arial', sans-serif;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                #8b2131 0%, #8b2131 30%, 
+                #f2c12e 30%, #f2c12e 60%,
+                #1e81b0 60%, #1e81b0 100%
+            );
+        }
+
+        .tibetan-text {
+            margin: 30px 0;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f9efd4;
+            box-shadow: 0 4px 15px rgba(139, 33, 49, 0.1);
+            position: relative;
+        }
+
+
+
+        .tibetan-text::before {
+            top: 10px;
+            left: 10px;
+        }
+
+        .tibetan-text::after {
+            bottom: 10px;
+            right: 10px;
+        }
+
+        /* Cards styling */
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 25px;
+            background-color: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #8b2131, #f2c12e, #1e81b0);
+        }
+
+        .card-header {
+            background-color: #8b2131;
+            color: white;
+            border-bottom: none;
+        }
+
+        /* Prayer wheel fixed button */
+        .prayer-wheel {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #8b2131;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .prayer-wheel-spinning {
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Decorative lamps */
+        .tibetan-lamp {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #f2c12e;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(242, 193, 46, 0.7);
+            z-index: 10;
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        .lamp-left {
+            top: 100px;
+            left: 20px;
+        }
+
+        .lamp-right {
+            top: 120px;
+            right: 20px;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Interactive mandala */
+        .interactive-mandala {
+            width: 120px;
+            height: 120px;
+            margin: 20px auto;
+            border-radius: 50%;
+            background: radial-gradient(circle, 
+                #8b2131 10%, 
+                #f2c12e 30%, 
+                #1e81b0 50%, 
+                #f9efd4 70%, 
+                #8b2131 90%);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            transition: transform 2s ease;
+            cursor: pointer;
+        }
+
+        .interactive-mandala:hover {
+            transform: rotate(180deg);
+        }
+
+        .interactive-mandala::before {
+            content: "☸";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 40px;
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f9efd4;
+            border-top: 1px solid #e5e5e5;
+            padding: 15px 0;
+            margin-top: 30px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+
+    <img src="/Pages/Images pour pages/Tibet/Tibetan-Buddhist-Prayer-Flags_5.png" alt="" class="prayer-flags">
+    <img src="/Pages/Images pour pages/Tibet/Tibetan-Buddhist-Prayer-Flags_5.png" alt="" class="prayer-flags2">
+    <img src="/Pages/Images pour pages/Tibet/Tibetan-Buddhist-Prayer-Flags_5.png" alt="" class="prayer-flags3">
+        <img src="/Pages/Images pour pages/Tibet/Tibetan-Buddhist-Prayer-Flags_5.png" alt="" class="prayer-flags4">
+    <img src="/Pages/Images pour pages/Tibet/Tibetan-Buddhist-Prayer-Flags_5.png" alt="" class="prayer-flags5">
+    <img src="/Pages/Images pour pages/Tibet/Tibetan-Buddhist-Prayer-Flags_5.png" alt="" class="prayer-flags6">
+    <img src="/Pages/Images pour pages/Tibet/Tibetan-Buddhist-Prayer-Flags_5.png" alt="" class="prayer-flags7">
+    <img src="/Pages/Images pour pages/Tibet/Tibetan-Buddhist-Prayer-Flags_5.png" alt="" class="prayer-flags8">
+
+
+    <!-- Decorative lamps -->
+    <div class="tibetan-lamp lamp-left"></div>
+    <div class="tibetan-lamp lamp-right"></div>
+
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">
@@ -46,137 +301,177 @@
             </div>
         </nav>
     </header>
-<body>
-  <main>
-    <div class="container">
-  
-        <section class="section">
-            <div class="row align-items-center">
-                <div class="col-md-12">
-                    <div class="tibetan-text text-center">
-                        <h2>Tibetan Writing System</h2>
-                        <p>དབྱངས་སྐུལ།</p>
-                        <p class="text-muted small">byangs skul – Writing Peace</p>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="img-container">
-                        <img src="images/tibetan/tibetan letter.png" alt="Tibetan Script Example" class="img-fluid" width="350">
-                    </div>
-                </div>
-            </div>
-        </section>
-  
-        <section class="section">
-            <h2 class="mb-4">How to Recognize It?</h2>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Distinctive Features of Tibetan Script</h5>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <strong>Vertical Script:</strong> Written from left to right in horizontal lines, but characters are often stacked in syllables.
-                        </li>
-                        <li class="list-group-item">
-                            <strong>Distinctive Rounded Letters:</strong> The script consists of rounded and angular shapes, making it easily recognizable.
-                        </li>
-                        <li class="list-group-item">
-                            <strong>Syllabic Alphabet:</strong> Each character generally represents a syllable, and is often composed of a consonant followed by a vowel.
-                        </li>
-                        <li class="list-group-item">
-                            <strong>Used for Multiple Languages:</strong> Primarily used for Tibetan, but also used for Dzongkha (Bhutan), Ladakhi, and others.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-  
-        <section class="section">
-            <h2 class="mb-4">Writing Basics</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <p>The Tibetan script dates back to the 7th century and has a rich connection with Buddhism and religious texts. It is used in Tibetan, Bhutanese, and Ladakhi languages.</p>
-  
-                    <div class="card mb-4">
-                        <div class="card-header">
-                            Basic Principles
+    <main>
+        <div class="container">
+      
+            <section class="section">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="tibetan-text text-center">
+                            <h2>Tibetan Writing System</h2>
+                            <p>དབྱངས་སྐུལ།</p>
+                            <p class="text-muted small">byangs skul – Writing Peace</p>
                         </div>
-                        <div class="card-body">
-                            <ul>
-                                <li>Written from left to right, in horizontal lines, but the letters often cluster into syllabic blocks.</li>
-                                <li>Each character typically represents a syllable.</li>
-                                <li>Has both consonant and vowel components, with many special marks for tone and pronunciation.</li>
-                                <li>Used in Tibetan, Bhutanese, and several other Himalayan languages.</li>
-                                <li>Often used for religious texts, mantras, and cultural artifacts.</li>
-                            </ul>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="img-container">
+                            <img src="images/tibetan/tibetan letter.png" alt="Tibetan Script Example" class="img-fluid" width="350">
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="img-container">
-                        <img src="images/tibetan/tibetan alphabet.png" alt="Tibetan Script Chart" class="img-fluid" width="500">
+            </section>
+      
+            <section class="section">
+                <h2 class="mb-4">How to Recognize It?</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Distinctive Features of Tibetan Script</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Vertical Script:</strong> Written from left to right in horizontal lines, but characters are often stacked in syllables.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Distinctive Rounded Letters:</strong> The script consists of rounded and angular shapes, making it easily recognizable.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Syllabic Alphabet:</strong> Each character generally represents a syllable, and is often composed of a consonant followed by a vowel.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Used for Multiple Languages:</strong> Primarily used for Tibetan, but also used for Dzongkha (Bhutan), Ladakhi, and others.
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </section>
-  
-        <section class="section">
-            <h2 class="mb-4">History</h2>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="timeline">
-                        <div class="card mb-3">
-                            <div class="card-header">Origins and Evolution</div>
-                            <div class="card-body">
-                                <p>The Tibetan script has evolved from the ancient Indian Brahmi script, and its formalization took place under King Songtsen Gampo during the 7th century. It spread alongside Tibetan Buddhism and became a symbol of cultural identity.</p>
-  
-                                <h5 class="mt-4">Timeline of Development</h5>
-                                <ul>
-                                    <li><strong>7th Century CE:</strong> Tibetan script officially developed under King Songtsen Gampo.</li>
-                                    <li><strong>8th Century:</strong> Tibetan script used for Buddhist texts, starting to spread across regions.</li>
-                                    <li><strong>15th Century:</strong> Further refinement and usage of the script in manuscripts and religious texts.</li>
-                                    <li><strong>Modern Day:</strong> Widely used in Tibet, Bhutan, and other Himalayan regions, still a key part of cultural and religious practice.</li>
-                                </ul>
+            </section>
+      
+            <section class="section">
+                <h2 class="mb-4">Writing Basics</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>The Tibetan script dates back to the 7th century and has a rich connection with Buddhism and religious texts. It is used in Tibetan, Bhutanese, and Ladakhi languages.</p>
+      
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                Basic Principles
                             </div>
-                        </div>
-  
-                        <div class="card">
-                            <div class="card-header">Fun Facts</div>
                             <div class="card-body">
                                 <ul>
-                                    <li>Tibetan script is used for writing not only the Tibetan language but also Sanskrit and other languages in the Himalayan region.</li>
-                                    <li>The script is often seen as a sacred symbol and is intricately used in religious texts, especially Tibetan Buddhist scriptures.</li>
-                                    <li>There is no equivalent to punctuation marks in Tibetan writing. Space is used as a separator between words.</li>
-                                    <li>The letter "ཀ" (ka) is considered the root of all letters in Tibetan script and is often used in sacred chants and mantras.</li>
+                                    <li>Written from left to right, in horizontal lines, but the letters often cluster into syllabic blocks.</li>
+                                    <li>Each character typically represents a syllable.</li>
+                                    <li>Has both consonant and vowel components, with many special marks for tone and pronunciation.</li>
+                                    <li>Used in Tibetan, Bhutanese, and several other Himalayan languages.</li>
+                                    <li>Often used for religious texts, mantras, and cultural artifacts.</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-  
-        <section class="section useful-links">
-            <h2 class="mb-4">Useful Links</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-header">Learning Resources</div>
-                        <div class="card-body">
-                          <a href="#" target="_blank">?</a>
+                    <div class="col-md-6">
+                        <div class="img-container">
+                            <img src="images/tibetan/tibetan alphabet.png" alt="Tibetan Script Chart" class="img-fluid" width="500">
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-header">Cultural and Historical Resources</div>
-                        <div class="card-body">
-                          <a href="#" target="_blank">?</a>
+            </section>
+      
+            <section class="section">
+                <h2 class="mb-4">History</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="timeline">
+                            <div class="card mb-3">
+                                <div class="card-header">Origins and Evolution</div>
+                                <div class="card-body">
+                                    <p>The Tibetan script has evolved from the ancient Indian Brahmi script, and its formalization took place under King Songtsen Gampo during the 7th century. It spread alongside Tibetan Buddhism and became a symbol of cultural identity.</p>
+      
+                                    <h5 class="mt-4">Timeline of Development</h5>
+                                    <ul>
+                                        <li><strong>7th Century CE:</strong> Tibetan script officially developed under King Songtsen Gampo.</li>
+                                        <li><strong>8th Century:</strong> Tibetan script used for Buddhist texts, starting to spread across regions.</li>
+                                        <li><strong>15th Century:</strong> Further refinement and usage of the script in manuscripts and religious texts.</li>
+                                        <li><strong>Modern Day:</strong> Widely used in Tibet, Bhutan, and other Himalayan regions, still a key part of cultural and religious practice.</li>
+                                    </ul>
+                                </div>
+                            </div>
+      
+                            <div class="card">
+                                <div class="card-header">Fun Facts</div>
+                                <div class="card-body">
+                                    <ul>
+                                        <li>Tibetan script is used for writing not only the Tibetan language but also Sanskrit and other languages in the Himalayan region.</li>
+                                        <li>The script is often seen as a sacred symbol and is intricately used in religious texts, especially Tibetan Buddhist scriptures.</li>
+                                        <li>There is no equivalent to punctuation marks in Tibetan writing. Space is used as a separator between words.</li>
+                                        <li>The letter "ཀ" (ka) is considered the root of all letters in Tibetan script and is often used in sacred chants and mantras.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </div>
-</main>
+            </section>
+      
+            <section class="section useful-links">
+                <h2 class="mb-4">Useful Links</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-header">Learning Resources</div>
+                            <div class="card-body">
+                              <a href="#" target="_blank">?</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-header">Cultural and Historical Resources</div>
+                            <div class="card-body">
+                              <a href="#" target="_blank">?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive mandala at the bottom -->
+            <div class="interactive-mandala" id="mandala"></div>
+        </div>
+    </main>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <p class="text-muted small">© 2025 Tibetan Writing System</p>
+    </footer>
+
+    <script>
+        // Prayer wheel interaction
+        document.getElementById('prayerWheel').addEventListener('click', function() {
+            this.classList.add('prayer-wheel-spinning');
+            
+            // Remove spinning class after 2 seconds
+            setTimeout(() => {
+                this.classList.remove('prayer-wheel-spinning');
+            }, 2000);
+        });
+        
+        // Mandala interaction
+        document.getElementById('mandala').addEventListener('click', function() {
+            this.style.transform = this.style.transform === 'rotate(180deg)' ? 'rotate(0deg)' : 'rotate(180deg)';
+        });
+        
+        // Add hover effect to all cards
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.15)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            });
+        });
+    </script>
 </body>
 </html>
